@@ -1,0 +1,11 @@
+//
+//  PrefixHeader.pch
+//  CityGuide
+//
+//  Created by taras on 23.06.15.
+//  Copyright (c) 2015 t. All rights reserved.
+//
+
+#import "AppManager.h"
+#import "ServerManager.h"
+
