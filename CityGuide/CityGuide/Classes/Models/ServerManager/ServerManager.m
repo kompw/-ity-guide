@@ -28,8 +28,27 @@ static NSString *urlStr= @"http://citymy.ru/api/";
     [self baseGetReqestWithUrk:url completion:completion];
 }
 
-+(void)directoryData:(void (^)(NSArray* array))completion{
++(void)directory1Data:(void (^)(NSArray* array))completion{
     NSString *url = [urlStr stringByAppendingString:@"catalog/get_categories.php"];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)directory2Data:(NSString*)category_id forMap:(BOOL)forMap completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"catalog/get_subcategories.php?category_id=",category_id];
+    
+    if (forMap) {
+        url = [url stringByAppendingString:@"&for_map=1"];
+    }
+    
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)directory3Data:(NSString*)subcategory_id forMap:(BOOL)forMap completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"catalog/get_companies.php?subcategory_id=",subcategory_id];
+    if (forMap) {
+        url = [url stringByAppendingString:@"&for_map=1"];
+    }
+    
     [self baseGetReqestWithUrk:url completion:completion];
 }
 

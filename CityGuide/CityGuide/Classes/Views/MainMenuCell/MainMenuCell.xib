@@ -18,7 +18,7 @@
                         <rect key="frame" x="8" y="8" width="584" height="93"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="wxq-Qf-acg">
-                                <rect key="frame" x="1" y="8" width="65" height="65"/>
+                                <rect key="frame" x="8" y="12" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="TN1-YC-qpY"/>
                                 </constraints>
@@ -27,7 +27,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скидки, купоны, спецпредложения" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLQ-qJ-90M">
-                                <rect key="frame" x="79" y="28" width="512" height="45"/>
+                                <rect key="frame" x="81" y="36" width="507" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.08235294118" green="0.10980392160000001" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Акции" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le4-QA-MxE">
-                                <rect key="frame" x="79" y="0.0" width="512" height="21"/>
+                                <rect key="frame" x="81" y="8" width="507" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="LOh-FU-aUA"/>
                                 </constraints>
@@ -50,15 +50,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wxq-Qf-acg" firstAttribute="bottom" secondItem="GLQ-qJ-90M" secondAttribute="bottom" id="3W6-hP-fBY"/>
+                            <constraint firstItem="wxq-Qf-acg" firstAttribute="bottom" secondItem="GLQ-qJ-90M" secondAttribute="bottom" constant="-4" id="3W6-hP-fBY"/>
                             <constraint firstItem="GLQ-qJ-90M" firstAttribute="leading" secondItem="le4-QA-MxE" secondAttribute="leading" id="5vS-a8-lt5"/>
-                            <constraint firstAttribute="trailing" secondItem="le4-QA-MxE" secondAttribute="trailing" constant="-7" id="5xe-Ns-jlt"/>
-                            <constraint firstItem="wxq-Qf-acg" firstAttribute="leading" secondItem="6lh-yQ-hy3" secondAttribute="leadingMargin" constant="-7" id="6Ob-7v-qqN"/>
-                            <constraint firstItem="le4-QA-MxE" firstAttribute="leading" secondItem="wxq-Qf-acg" secondAttribute="trailing" constant="13" id="BRY-1A-zGU"/>
+                            <constraint firstAttribute="trailing" secondItem="le4-QA-MxE" secondAttribute="trailing" constant="-4" id="5xe-Ns-jlt"/>
+                            <constraint firstItem="wxq-Qf-acg" firstAttribute="leading" secondItem="6lh-yQ-hy3" secondAttribute="leadingMargin" id="6Ob-7v-qqN"/>
+                            <constraint firstItem="le4-QA-MxE" firstAttribute="leading" secondItem="wxq-Qf-acg" secondAttribute="trailing" constant="8" id="BRY-1A-zGU"/>
                             <constraint firstItem="GLQ-qJ-90M" firstAttribute="trailing" secondItem="le4-QA-MxE" secondAttribute="trailing" id="Cct-zd-PkE"/>
-                            <constraint firstItem="wxq-Qf-acg" firstAttribute="top" secondItem="6lh-yQ-hy3" secondAttribute="topMargin" id="U3Z-Qb-Ygw"/>
-                            <constraint firstItem="le4-QA-MxE" firstAttribute="top" secondItem="6lh-yQ-hy3" secondAttribute="top" id="YVq-ZV-ikO"/>
-                            <constraint firstAttribute="bottom" secondItem="wxq-Qf-acg" secondAttribute="bottom" constant="20" id="iJd-cb-Sd6"/>
+                            <constraint firstItem="wxq-Qf-acg" firstAttribute="top" secondItem="6lh-yQ-hy3" secondAttribute="topMargin" constant="4" id="U3Z-Qb-Ygw"/>
+                            <constraint firstItem="le4-QA-MxE" firstAttribute="top" secondItem="6lh-yQ-hy3" secondAttribute="top" constant="8" id="YVq-ZV-ikO"/>
+                            <constraint firstAttribute="bottom" secondItem="wxq-Qf-acg" secondAttribute="bottom" constant="16" id="iJd-cb-Sd6"/>
                             <constraint firstItem="GLQ-qJ-90M" firstAttribute="top" secondItem="le4-QA-MxE" secondAttribute="bottom" constant="7" id="zcJ-kK-LGo"/>
                         </constraints>
                     </view>

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SendView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
 @end

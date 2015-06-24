@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-
+// all screen with table in app
 typedef NS_ENUM(NSUInteger, Controller) {
     MainMenu,
     Shares,
+    Directory1,
+    Directory2,
+    Directory3,
     Delivery,
-    Directory,
     Map,
     News,
-    Taxi
+    Taxi,
+    Poster
 };
 
-@interface BaseViewController : UIViewController
+@interface BaseTableViewController : UIViewController
 @property (readwrite) Controller controllerType;
 @property (nonatomic, strong) NSNumber *numberId;
 

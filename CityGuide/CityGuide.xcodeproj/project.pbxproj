@@ -22,10 +22,15 @@
 		4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233B1B395CCE009BBB34 /* Images.xcassets */; };
 		4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */; };
 		4E3C234B1B395CCE009BBB34 /* CityGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */; };
-		4E555D7D1B397DD0009253DC /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E555D7C1B397DD0009253DC /* MainMenuController.m */; };
-		4E555D841B39949F009253DC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E555D821B39949F009253DC /* BaseViewController.m */; };
-		4E555D851B39949F009253DC /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E555D831B39949F009253DC /* BaseViewController.xib */; };
 		4E555EE01B39BF17009253DC /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E555EDF1B39BF17009253DC /* ServerManager.m */; };
+		7676EBB21B3AB7FB00CD967D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */; };
+		7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */; };
+		7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */; };
+		7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */; };
+		7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBBD1B3AD29D00CD967D /* MapViewController.m */; };
+		7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBBE1B3AD29D00CD967D /* MapViewController.xib */; };
+		7676EBC41B3AD2AB00CD967D /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */; };
+		7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBC31B3AD2AB00CD967D /* CompanyViewController.xib */; };
 		90F24CABAF03CAF606C38A5C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697B2D094C3C2F9EE6755061 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,15 +70,22 @@
 		4E3C23441B395CCE009BBB34 /* CityGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C23491B395CCE009BBB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityGuideTests.m; sourceTree = "<group>"; };
-		4E555D7B1B397DD0009253DC /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuController.h; sourceTree = "<group>"; };
-		4E555D7C1B397DD0009253DC /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuController.m; sourceTree = "<group>"; };
-		4E555D811B39949F009253DC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = CityGuide/Classes/BaseViewController/BaseViewController.h; sourceTree = SOURCE_ROOT; };
-		4E555D821B39949F009253DC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = CityGuide/Classes/BaseViewController/BaseViewController.m; sourceTree = SOURCE_ROOT; };
-		4E555D831B39949F009253DC /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseViewController.xib; path = CityGuide/Classes/BaseViewController/BaseViewController.xib; sourceTree = SOURCE_ROOT; };
 		4E555D891B399F03009253DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4E555EDE1B39BF17009253DC /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		4E555EDF1B39BF17009253DC /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
 		697B2D094C3C2F9EE6755061 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7676EBAF1B3AB7FB00CD967D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewController.xib; sourceTree = "<group>"; };
+		7676EBB51B3AB85300CD967D /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
+		7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailViewController.m; sourceTree = "<group>"; };
+		7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseDetailViewController.xib; sourceTree = "<group>"; };
+		7676EBBC1B3AD29D00CD967D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7676EBBD1B3AD29D00CD967D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		7676EBBE1B3AD29D00CD967D /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		7676EBC11B3AD2AB00CD967D /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
+		7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
+		7676EBC31B3AD2AB00CD967D /* CompanyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
 		CAECDDE46DEDE93450892610 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E3E48FA11B49A795410BB6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,69 +222,14 @@
 		4E555D6D1B396DD6009253DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4E555D801B398EA7009253DC /* BaseViewController */,
+				7676EBBA1B3AD28400CD967D /* CompanyViewController */,
+				7676EBBB1B3AD28400CD967D /* MapViewController */,
+				7676EBB41B3AB82F00CD967D /* BaseDetailViewController */,
+				7676EBAE1B3AB7FB00CD967D /* BaseTableViewController */,
 				4E555D7E1B398DE7009253DC /* Models */,
 				4E555D7F1B398DE7009253DC /* Views */,
-				4E555D6E1B396FA9009253DC /* MainMenu */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		4E555D6E1B396FA9009253DC /* MainMenu */ = {
-			isa = PBXGroup;
-			children = (
-				4E555D6F1B396FA9009253DC /* DeliveryController */,
-				4E555D701B396FA9009253DC /* DirectoryController */,
-				4E555D711B396FA9009253DC /* MapController */,
-				4E555D721B396FA9009253DC /* NewsController */,
-				4E555D731B396FA9009253DC /* SharesController */,
-				4E555D741B396FA9009253DC /* TaxiController */,
-				4E555D7B1B397DD0009253DC /* MainMenuController.h */,
-				4E555D7C1B397DD0009253DC /* MainMenuController.m */,
-			);
-			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		4E555D6F1B396FA9009253DC /* DeliveryController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DeliveryController;
-			sourceTree = "<group>";
-		};
-		4E555D701B396FA9009253DC /* DirectoryController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DirectoryController;
-			sourceTree = "<group>";
-		};
-		4E555D711B396FA9009253DC /* MapController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MapController;
-			sourceTree = "<group>";
-		};
-		4E555D721B396FA9009253DC /* NewsController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NewsController;
-			sourceTree = "<group>";
-		};
-		4E555D731B396FA9009253DC /* SharesController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharesController;
-			sourceTree = "<group>";
-		};
-		4E555D741B396FA9009253DC /* TaxiController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TaxiController;
 			sourceTree = "<group>";
 		};
 		4E555D7E1B398DE7009253DC /* Models */ = {
@@ -295,17 +252,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4E555D801B398EA7009253DC /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4E555D811B39949F009253DC /* BaseViewController.h */,
-				4E555D821B39949F009253DC /* BaseViewController.m */,
-				4E555D831B39949F009253DC /* BaseViewController.xib */,
-			);
-			name = BaseViewController;
-			path = BaseController;
-			sourceTree = "<group>";
-		};
 		4E555EDD1B39BF04009253DC /* ServerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +268,46 @@
 				CAECDDE46DEDE93450892610 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7676EBAE1B3AB7FB00CD967D /* BaseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7676EBAF1B3AB7FB00CD967D /* BaseTableViewController.h */,
+				7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */,
+				7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */,
+			);
+			path = BaseTableViewController;
+			sourceTree = "<group>";
+		};
+		7676EBB41B3AB82F00CD967D /* BaseDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7676EBB51B3AB85300CD967D /* BaseDetailViewController.h */,
+				7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */,
+				7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */,
+			);
+			path = BaseDetailViewController;
+			sourceTree = "<group>";
+		};
+		7676EBBA1B3AD28400CD967D /* CompanyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7676EBC11B3AD2AB00CD967D /* CompanyViewController.h */,
+				7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */,
+				7676EBC31B3AD2AB00CD967D /* CompanyViewController.xib */,
+			);
+			path = CompanyViewController;
+			sourceTree = "<group>";
+		};
+		7676EBBB1B3AD28400CD967D /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7676EBBC1B3AD29D00CD967D /* MapViewController.h */,
+				7676EBBD1B3AD29D00CD967D /* MapViewController.m */,
+				7676EBBE1B3AD29D00CD967D /* MapViewController.xib */,
+			);
+			path = MapViewController;
 			sourceTree = "<group>";
 		};
 		902CC670ACF5FE6832D9F3D7 /* Frameworks */ = {
@@ -418,10 +404,13 @@
 				4E3567311B39F31500ADBA7F /* TextCell.xib in Resources */,
 				4E35672C1B39D8E300ADBA7F /* MainMenuCell.xib in Resources */,
 				4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */,
+				7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */,
+				7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */,
 				4E3C233A1B395CCE009BBB34 /* Main.storyboard in Resources */,
-				4E555D851B39949F009253DC /* BaseViewController.xib in Resources */,
 				4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */,
 				4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */,
+				7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */,
+				7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */,
 				4E3567361B39F32700ADBA7F /* TextWithImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,16 +462,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7676EBC41B3AD2AB00CD967D /* CompanyViewController.m in Sources */,
 				4E555EE01B39BF17009253DC /* ServerManager.m in Sources */,
 				4E3C23341B395CCE009BBB34 /* AppDelegate.m in Sources */,
 				4E35673A1B3A09AE00ADBA7F /* SendView.m in Sources */,
 				4E3567351B39F32700ADBA7F /* TextWithImageCell.m in Sources */,
+				7676EBB21B3AB7FB00CD967D /* BaseTableViewController.m in Sources */,
 				4E3567301B39F31500ADBA7F /* TextCell.m in Sources */,
-				4E555D841B39949F009253DC /* BaseViewController.m in Sources */,
-				4E555D7D1B397DD0009253DC /* MainMenuController.m in Sources */,
 				4E3C23311B395CCE009BBB34 /* main.m in Sources */,
 				4E35672B1B39D8E300ADBA7F /* MainMenuCell.m in Sources */,
+				7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */,
 				4E3567241B39CD8D00ADBA7F /* AppManager.m in Sources */,
+				7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

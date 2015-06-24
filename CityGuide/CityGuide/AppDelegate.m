@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    BaseViewController *baseViewController = [BaseViewController alloc];
+    BaseTableViewController *baseViewController = [BaseTableViewController alloc];
     baseViewController.controllerType = MainMenu;
     
     UINavigationController *navigat = [[UINavigationController alloc]initWithRootViewController:[baseViewController init]];
