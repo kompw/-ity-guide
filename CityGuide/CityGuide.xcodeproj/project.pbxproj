@@ -18,7 +18,6 @@
 		4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E35673B1B3A09ED00ADBA7F /* SendView.xib */; };
 		4E3C23311B395CCE009BBB34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C23301B395CCE009BBB34 /* main.m */; };
 		4E3C23341B395CCE009BBB34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C23331B395CCE009BBB34 /* AppDelegate.m */; };
-		4E3C233A1B395CCE009BBB34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C23381B395CCE009BBB34 /* Main.storyboard */; };
 		4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233B1B395CCE009BBB34 /* Images.xcassets */; };
 		4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */; };
 		4E3C234B1B395CCE009BBB34 /* CityGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */; };
@@ -31,6 +30,9 @@
 		7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBBE1B3AD29D00CD967D /* MapViewController.xib */; };
 		7676EBC41B3AD2AB00CD967D /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */; };
 		7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBC31B3AD2AB00CD967D /* CompanyViewController.xib */; };
+		7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBD11B3C162D00CD967D /* Main.storyboard */; };
+		7676EBDC1B3C18B700CD967D /* SendMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */; };
+		7676EBDD1B3C18B700CD967D /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBDB1B3C18B700CD967D /* SendMessageViewController.m */; };
 		90F24CABAF03CAF606C38A5C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697B2D094C3C2F9EE6755061 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +66,6 @@
 		4E3C23301B395CCE009BBB34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E3C23321B395CCE009BBB34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E3C23331B395CCE009BBB34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E3C23391B395CCE009BBB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E3C233B1B395CCE009BBB34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E3C233E1B395CCE009BBB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4E3C23441B395CCE009BBB34 /* CityGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +87,10 @@
 		7676EBC11B3AD2AB00CD967D /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
 		7676EBC31B3AD2AB00CD967D /* CompanyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
+		7676EBD11B3C162D00CD967D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageViewController.xib; sourceTree = "<group>"; };
+		7676EBDA1B3C18B700CD967D /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageViewController.h; sourceTree = "<group>"; };
+		7676EBDB1B3C18B700CD967D /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
 		CAECDDE46DEDE93450892610 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E3E48FA11B49A795410BB6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,7 +189,7 @@
 				4E555D6D1B396DD6009253DC /* Classes */,
 				4E3C23321B395CCE009BBB34 /* AppDelegate.h */,
 				4E3C23331B395CCE009BBB34 /* AppDelegate.m */,
-				4E3C23381B395CCE009BBB34 /* Main.storyboard */,
+				7676EBD11B3C162D00CD967D /* Main.storyboard */,
 				4E3C233B1B395CCE009BBB34 /* Images.xcassets */,
 				4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */,
 				4E3C232E1B395CCE009BBB34 /* Supporting Files */,
@@ -222,6 +227,7 @@
 		4E555D6D1B396DD6009253DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7676EBD81B3C18AD00CD967D /* SendMessageViewController */,
 				7676EBBA1B3AD28400CD967D /* CompanyViewController */,
 				7676EBBB1B3AD28400CD967D /* MapViewController */,
 				7676EBB41B3AB82F00CD967D /* BaseDetailViewController */,
@@ -310,6 +316,16 @@
 			path = MapViewController;
 			sourceTree = "<group>";
 		};
+		7676EBD81B3C18AD00CD967D /* SendMessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7676EBDA1B3C18B700CD967D /* SendMessageViewController.h */,
+				7676EBDB1B3C18B700CD967D /* SendMessageViewController.m */,
+				7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */,
+			);
+			path = SendMessageViewController;
+			sourceTree = "<group>";
+		};
 		902CC670ACF5FE6832D9F3D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,10 +385,11 @@
 				TargetAttributes = {
 					4E3C232A1B395CCE009BBB34 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = ZGMDWAJAVX;
+						DevelopmentTeam = 273R8XZ56B;
 					};
 					4E3C23431B395CCE009BBB34 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 273R8XZ56B;
 						TestTargetID = 4E3C232A1B395CCE009BBB34;
 					};
 				};
@@ -404,11 +421,12 @@
 				4E3567311B39F31500ADBA7F /* TextCell.xib in Resources */,
 				4E35672C1B39D8E300ADBA7F /* MainMenuCell.xib in Resources */,
 				4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */,
+				7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */,
 				7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */,
 				7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */,
-				4E3C233A1B395CCE009BBB34 /* Main.storyboard in Resources */,
 				4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */,
 				4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */,
+				7676EBDC1B3C18B700CD967D /* SendMessageViewController.xib in Resources */,
 				7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */,
 				7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */,
 				4E3567361B39F32700ADBA7F /* TextWithImageCell.xib in Resources */,
@@ -473,6 +491,7 @@
 				4E35672B1B39D8E300ADBA7F /* MainMenuCell.m in Sources */,
 				7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */,
 				4E3567241B39CD8D00ADBA7F /* AppManager.m in Sources */,
+				7676EBDD1B3C18B700CD967D /* SendMessageViewController.m in Sources */,
 				7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,14 +515,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4E3C23381B395CCE009BBB34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E3C23391B395CCE009BBB34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -629,6 +640,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -640,6 +653,7 @@
 				INFOPLIST_FILE = CityGuideTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuide.app/CityGuide";
 			};
 			name = Debug;
@@ -648,6 +662,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -655,6 +671,7 @@
 				INFOPLIST_FILE = CityGuideTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityGuide.app/CityGuide";
 			};
 			name = Release;

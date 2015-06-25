@@ -36,7 +36,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="sendButton" destination="Hx1-NC-ggL" id="UX9-ew-XRe"/>
+                <outlet property="sendButton" destination="Hx1-NC-ggL" id="7nK-W5-OOJ"/>
             </connections>
             <point key="canvasLocation" x="497" y="489"/>
         </view>

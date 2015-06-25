@@ -10,6 +10,7 @@
 #import "BaseDetailViewController.h"
 #import "MapViewController.h"
 #import "CompanyViewController.h"
+#import "SendMessageViewController.h"
 
 #import "SendView.h"
 #import "MainMenuCell.h"
@@ -148,12 +149,12 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 
         case Shares:
             [sendView.sendButton setTitle:@"Разместить Акцию" forState: UIControlStateNormal];
-           
             break;
             
-        case Directory1 | Directory2 | Directory3:
+        case Directory1:
+        case Directory2:
+        case Directory3:
             [sendView.sendButton setTitle:@"Разместить Компанию" forState: UIControlStateNormal];
-            
             break;
             
         default:
@@ -319,7 +320,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 }
 
 -(void)openSendController{
-    
+    [self.navigationController pushViewController:[SendMessageViewController new] animated:YES];
 }
 
 

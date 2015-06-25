@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRs-2q-ZkF">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRs-2q-ZkF">
                     <rect key="frame" x="288" y="46" width="304" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="jsT-lE-JPe"/>
@@ -39,7 +39,7 @@
                         </mask>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-5j-CnX">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-5j-CnX">
                     <rect key="frame" x="27" y="35" width="240" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="128" id="xnb-kO-omn"/>
@@ -55,13 +55,13 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="описание" translatesAutoresizingMaskIntoConstraints="NO" id="skC-oE-0Ta">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="описание" translatesAutoresizingMaskIntoConstraints="NO" id="skC-oE-0Ta">
                     <rect key="frame" x="27" y="171" width="565" height="429"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-0D-jbH">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-0D-jbH">
                     <rect key="frame" x="288" y="133" width="304" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="IHd-JG-01K">
@@ -85,7 +85,7 @@
                         <action selector="adress:" destination="-1" eventType="touchUpInside" id="EOj-cg-bgR"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rBZ-oR-vxq">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rBZ-oR-vxq">
                     <rect key="frame" x="288" y="95" width="304" height="30"/>
                     <state key="normal" title="Телефон">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,42 +126,42 @@
             <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="8VW-w8-IFI"/>
+                    <exclude reference="nNB-r1-or6"/>
+                    <exclude reference="Dh1-zf-3cy"/>
+                    <exclude reference="Kgm-4z-m0I"/>
+                    <exclude reference="Tjw-Os-b8x"/>
+                    <exclude reference="Xea-SI-Ltq"/>
                     <exclude reference="Kcl-pC-iRK"/>
                     <exclude reference="RV1-ET-ApN"/>
                     <exclude reference="evO-kC-z4T"/>
                     <exclude reference="pgA-FQ-zNr"/>
-                    <exclude reference="8VW-w8-IFI"/>
-                    <exclude reference="nNB-r1-or6"/>
                     <exclude reference="6zn-Vs-Mpc"/>
                     <exclude reference="Bis-y8-TWS"/>
                     <exclude reference="UTw-zp-WyG"/>
                     <exclude reference="f3X-h6-APF"/>
                     <exclude reference="z2q-xl-0Ab"/>
-                    <exclude reference="Dh1-zf-3cy"/>
-                    <exclude reference="Kgm-4z-m0I"/>
-                    <exclude reference="Tjw-Os-b8x"/>
-                    <exclude reference="Xea-SI-Ltq"/>
                     <exclude reference="4lP-qn-J1L"/>
                     <exclude reference="EzY-Yu-36j"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="constraints">
+                    <include reference="8VW-w8-IFI"/>
+                    <include reference="nNB-r1-or6"/>
+                    <include reference="Dh1-zf-3cy"/>
+                    <include reference="Kgm-4z-m0I"/>
+                    <include reference="Tjw-Os-b8x"/>
+                    <include reference="Xea-SI-Ltq"/>
                     <include reference="Kcl-pC-iRK"/>
                     <include reference="RV1-ET-ApN"/>
                     <include reference="evO-kC-z4T"/>
                     <include reference="pgA-FQ-zNr"/>
-                    <include reference="8VW-w8-IFI"/>
-                    <include reference="nNB-r1-or6"/>
                     <include reference="6zn-Vs-Mpc"/>
                     <include reference="Bis-y8-TWS"/>
                     <include reference="UTw-zp-WyG"/>
                     <include reference="f3X-h6-APF"/>
                     <include reference="z2q-xl-0Ab"/>
-                    <include reference="Dh1-zf-3cy"/>
-                    <include reference="Kgm-4z-m0I"/>
-                    <include reference="Tjw-Os-b8x"/>
-                    <include reference="Xea-SI-Ltq"/>
                     <include reference="4lP-qn-J1L"/>
                     <include reference="EzY-Yu-36j"/>
                 </mask>
