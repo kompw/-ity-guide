@@ -15,10 +15,12 @@ typedef NS_ENUM(NSUInteger, Controller) {
     Directory1,
     Directory2,
     Directory3,
-    Delivery,
     Map,
     News,
     Taxi,
+    Delivery1,
+    Delivery2,
+    Delivery3,
     Poster
 };
 

@@ -24,6 +24,11 @@
     [alertView show];
 }
 
-
++(UIBarButtonItem*)backetButton:(UIViewController*)controller{
+    UIButton *backet = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 90, 30)];
+    [backet setTitle:@"Корзина" forState:UIControlStateNormal];
+    [backet addTarget:controller action:@selector(openBacket) forControlEvents:UIControlEventTouchUpInside];
+    return [[UIBarButtonItem alloc] initWithCustomView:backet];
+}
 
 @end

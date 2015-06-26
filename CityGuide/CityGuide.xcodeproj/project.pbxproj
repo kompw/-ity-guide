@@ -33,6 +33,13 @@
 		7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBD11B3C162D00CD967D /* Main.storyboard */; };
 		7676EBDC1B3C18B700CD967D /* SendMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */; };
 		7676EBDD1B3C18B700CD967D /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBDB1B3C18B700CD967D /* SendMessageViewController.m */; };
+		769287481B3D7A0D003E6491 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 769287461B3D7A0D003E6491 /* DishesViewController.m */; };
+		769287491B3D7A0D003E6491 /* DishesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769287471B3D7A0D003E6491 /* DishesViewController.xib */; };
+		7692874E1B3D8629003E6491 /* BasketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7692874C1B3D8629003E6491 /* BasketViewController.m */; };
+		7692874F1B3D8629003E6491 /* BasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7692874D1B3D8629003E6491 /* BasketViewController.xib */; };
+		769287531B3D9962003E6491 /* DishesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 769287521B3D9962003E6491 /* DishesModel.m */; };
+		769287581B3DA2B7003E6491 /* DishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 769287561B3DA2B7003E6491 /* DishesCell.m */; };
+		769287591B3DA2B7003E6491 /* DishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769287571B3DA2B7003E6491 /* DishesCell.xib */; };
 		90F24CABAF03CAF606C38A5C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697B2D094C3C2F9EE6755061 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +98,17 @@
 		7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageViewController.xib; sourceTree = "<group>"; };
 		7676EBDA1B3C18B700CD967D /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageViewController.h; sourceTree = "<group>"; };
 		7676EBDB1B3C18B700CD967D /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
+		769287451B3D7A0D003E6491 /* DishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishesViewController.h; sourceTree = "<group>"; };
+		769287461B3D7A0D003E6491 /* DishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishesViewController.m; sourceTree = "<group>"; };
+		769287471B3D7A0D003E6491 /* DishesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishesViewController.xib; sourceTree = "<group>"; };
+		7692874B1B3D8629003E6491 /* BasketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasketViewController.h; sourceTree = "<group>"; };
+		7692874C1B3D8629003E6491 /* BasketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketViewController.m; sourceTree = "<group>"; };
+		7692874D1B3D8629003E6491 /* BasketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasketViewController.xib; sourceTree = "<group>"; };
+		769287511B3D9962003E6491 /* DishesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishesModel.h; sourceTree = "<group>"; };
+		769287521B3D9962003E6491 /* DishesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishesModel.m; sourceTree = "<group>"; };
+		769287551B3DA2B7003E6491 /* DishesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishesCell.h; sourceTree = "<group>"; };
+		769287561B3DA2B7003E6491 /* DishesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishesCell.m; sourceTree = "<group>"; };
+		769287571B3DA2B7003E6491 /* DishesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DishesCell.xib; sourceTree = "<group>"; };
 		CAECDDE46DEDE93450892610 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E3E48FA11B49A795410BB6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +245,8 @@
 		4E555D6D1B396DD6009253DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7692874A1B3D861B003E6491 /* BasketViewController */,
+				769287441B3D79FE003E6491 /* DishesViewController */,
 				7676EBD81B3C18AD00CD967D /* SendMessageViewController */,
 				7676EBBA1B3AD28400CD967D /* CompanyViewController */,
 				7676EBBB1B3AD28400CD967D /* MapViewController */,
@@ -241,6 +261,7 @@
 		4E555D7E1B398DE7009253DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				769287501B3D9953003E6491 /* DishesModel */,
 				4E3567211B39CD7A00ADBA7F /* AppManager */,
 				4E555EDD1B39BF04009253DC /* ServerManager */,
 			);
@@ -250,6 +271,7 @@
 		4E555D7F1B398DE7009253DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				769287541B3DA29E003E6491 /* DishesCell */,
 				4E3567371B3A099800ADBA7F /* SendView */,
 				4E3567251B39D4FF00ADBA7F /* MainMenuCell */,
 				4E3567261B39D4FF00ADBA7F /* TextCell */,
@@ -324,6 +346,45 @@
 				7676EBD91B3C18B700CD967D /* SendMessageViewController.xib */,
 			);
 			path = SendMessageViewController;
+			sourceTree = "<group>";
+		};
+		769287441B3D79FE003E6491 /* DishesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				769287451B3D7A0D003E6491 /* DishesViewController.h */,
+				769287461B3D7A0D003E6491 /* DishesViewController.m */,
+				769287471B3D7A0D003E6491 /* DishesViewController.xib */,
+			);
+			path = DishesViewController;
+			sourceTree = "<group>";
+		};
+		7692874A1B3D861B003E6491 /* BasketViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7692874B1B3D8629003E6491 /* BasketViewController.h */,
+				7692874C1B3D8629003E6491 /* BasketViewController.m */,
+				7692874D1B3D8629003E6491 /* BasketViewController.xib */,
+			);
+			path = BasketViewController;
+			sourceTree = "<group>";
+		};
+		769287501B3D9953003E6491 /* DishesModel */ = {
+			isa = PBXGroup;
+			children = (
+				769287511B3D9962003E6491 /* DishesModel.h */,
+				769287521B3D9962003E6491 /* DishesModel.m */,
+			);
+			path = DishesModel;
+			sourceTree = "<group>";
+		};
+		769287541B3DA29E003E6491 /* DishesCell */ = {
+			isa = PBXGroup;
+			children = (
+				769287551B3DA2B7003E6491 /* DishesCell.h */,
+				769287561B3DA2B7003E6491 /* DishesCell.m */,
+				769287571B3DA2B7003E6491 /* DishesCell.xib */,
+			);
+			path = DishesCell;
 			sourceTree = "<group>";
 		};
 		902CC670ACF5FE6832D9F3D7 /* Frameworks */ = {
@@ -422,11 +483,14 @@
 				4E35672C1B39D8E300ADBA7F /* MainMenuCell.xib in Resources */,
 				4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */,
 				7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */,
+				769287591B3DA2B7003E6491 /* DishesCell.xib in Resources */,
+				7692874F1B3D8629003E6491 /* BasketViewController.xib in Resources */,
 				7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */,
 				7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */,
 				4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */,
 				4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */,
 				7676EBDC1B3C18B700CD967D /* SendMessageViewController.xib in Resources */,
+				769287491B3D7A0D003E6491 /* DishesViewController.xib in Resources */,
 				7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */,
 				7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */,
 				4E3567361B39F32700ADBA7F /* TextWithImageCell.xib in Resources */,
@@ -481,12 +545,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7676EBC41B3AD2AB00CD967D /* CompanyViewController.m in Sources */,
+				7692874E1B3D8629003E6491 /* BasketViewController.m in Sources */,
 				4E555EE01B39BF17009253DC /* ServerManager.m in Sources */,
 				4E3C23341B395CCE009BBB34 /* AppDelegate.m in Sources */,
+				769287581B3DA2B7003E6491 /* DishesCell.m in Sources */,
 				4E35673A1B3A09AE00ADBA7F /* SendView.m in Sources */,
 				4E3567351B39F32700ADBA7F /* TextWithImageCell.m in Sources */,
 				7676EBB21B3AB7FB00CD967D /* BaseTableViewController.m in Sources */,
+				769287481B3D7A0D003E6491 /* DishesViewController.m in Sources */,
 				4E3567301B39F31500ADBA7F /* TextCell.m in Sources */,
+				769287531B3D9962003E6491 /* DishesModel.m in Sources */,
 				4E3C23311B395CCE009BBB34 /* main.m in Sources */,
 				4E35672B1B39D8E300ADBA7F /* MainMenuCell.m in Sources */,
 				7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */,

@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import "CompanyViewController.h"
 #import "SendMessageViewController.h"
+#import "DishesViewController.h"
 
 #import "SendView.h"
 #import "MainMenuCell.h"
@@ -116,6 +117,87 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             }];
         }
             break;
+        case News:{
+            self.title = @"Новости";
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            
+            [ServerManager newsData:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
+        case Taxi:{
+            self.title = @"Такси";
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            
+            [ServerManager taxiData:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
+        case Delivery1:{
+            self.title = @"Доставка";
+            self.navigationItem.rightBarButtonItem = [AppManager backetButton:self];
+            
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell  description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            [ServerManager delivery1Data:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
+        case Delivery2:{
+            self.navigationItem.rightBarButtonItem = [AppManager backetButton:self];
+            
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            [ServerManager delivery2Data:self.numberId.description completion:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
+        case Delivery3:{
+            self.navigationItem.rightBarButtonItem = [AppManager backetButton:self];
+            
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            [ServerManager delivery3Data:self.numberId.description completion:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
     
         default:
             break;
@@ -156,7 +238,17 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case Directory3:
             [sendView.sendButton setTitle:@"Разместить Компанию" forState: UIControlStateNormal];
             break;
-            
+        case News:
+            [sendView.sendButton setTitle:@"Разместить новость" forState: UIControlStateNormal];
+            break;
+        case Taxi:
+            [sendView.sendButton setTitle:@"Разместить службу такси" forState: UIControlStateNormal];
+            break;
+        case Delivery1:
+        case Delivery2:
+        case Delivery3:
+            [sendView.sendButton setTitle:@"Разместить ресторан" forState: UIControlStateNormal];
+            break;
         default:
             break;
     }
@@ -173,24 +265,26 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              cell = [self mainMenuCell:indexPath andModel:model];
          }
              break;
+         case News:
          case Shares:{
              cell = [self textWithImageCell:indexPath andTitle:model[title_key] andImageUrl:model[image_key]];
          }
              break;
-         case Directory1:{
-             cell = [self textCell:indexPath andModel:model];
-         }
-             break;
+         case Delivery2:
+         case Directory1:
          case Directory2:{
              cell = [self textCell:indexPath andModel:model];
          }
              break;
-             
+         case Delivery1:
+         case Taxi:
          case Directory3:{
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
          }
              break;
-             
+        case Delivery3:
+             cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
+             break;
          default:
              break;
      }
@@ -207,6 +301,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             [self actionMainMenu:indexPath.row];
         }
             break;
+        case News:
         case Shares:{
             BaseDetailViewController *baseDetailViewController = [BaseDetailViewController alloc];
             baseDetailViewController.detailData = model[details_key];
@@ -238,6 +333,49 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         }
             break;
             
+        case Taxi:{
+            NSString *phones = model[phones_key];
+            NSArray *phonesArray = [phones componentsSeparatedByString:@","];
+            NSString *title = phonesArray.count == 1 ? @"Телефон для связи" : @"Телефоны для связи";
+            UIAlertController *optionMenu = [UIAlertController alertControllerWithTitle:title message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            
+            for (NSString *phone in phonesArray) {
+                UIAlertAction *alert = [UIAlertAction actionWithTitle:phone style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    NSString *phoneNumber = [@"tel://" stringByAppendingString:phone];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+                }];
+                [optionMenu addAction:alert];
+            }
+            
+            [self presentViewController:optionMenu animated:YES completion:nil];
+        }
+            break;
+        case Delivery1:{
+            BaseTableViewController *baseTableViewController = [BaseTableViewController alloc];
+            baseTableViewController.title = model[name_key];
+            baseTableViewController.numberId = model[id_key];
+            baseTableViewController.controllerType = Delivery2;
+            [self.navigationController pushViewController:[baseTableViewController init] animated:YES];
+            
+            BasketViewController *basketViewController = [BasketViewController sharedManager];
+            [basketViewController newRestaraunt:model];
+        }
+            break;
+        case Delivery2:{
+            BaseTableViewController *baseTableViewController = [BaseTableViewController alloc];
+            baseTableViewController.title = model[name_key];
+            baseTableViewController.numberId = model[id_key];
+            baseTableViewController.controllerType = Delivery3;
+            [self.navigationController pushViewController:[baseTableViewController init] animated:YES];
+        }
+            break;
+        case Delivery3:{
+            DishesViewController *dishesViewController = [DishesViewController alloc];
+            dishesViewController.souceDictionary = model;
+            [self.navigationController pushViewController:[dishesViewController init] animated:YES];
+        }
+            break;
+
         default:
             break;
     }
@@ -289,11 +427,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case SharesTab:
             baseViewController.controllerType = Shares;
             break;
-            
-        case DeliveryTab:
-            baseViewController.controllerType = Delivery;
-            break;
-            
         case DirectoryTab:
             baseViewController.controllerType = Directory1;
             break;
@@ -306,6 +439,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
         case TaxiTab:
             baseViewController.controllerType = Taxi;
+            break;
+        case DeliveryTab:
+            baseViewController.controllerType = Delivery1;
             break;
         case PosterTab:
             baseViewController.controllerType = Poster;
@@ -323,5 +459,14 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     [self.navigationController pushViewController:[SendMessageViewController new] animated:YES];
 }
 
+-(void)openBacket{
+    BasketViewController *basketViewController = [BasketViewController sharedManager];
+    
+    if ([basketViewController countDishes] == 0) {
+        return;
+    }
+    
+    [self.navigationController pushViewController:basketViewController animated:YES];
+}
 
 @end

@@ -52,6 +52,27 @@ static NSString *urlStr= @"http://citymy.ru/api/";
     [self baseGetReqestWithUrk:url completion:completion];
 }
 
++(void)delivery1Data:(void (^)(NSArray* array))completion{
+    NSString *url = [urlStr stringByAppendingString:@"delivery/get_restaraunts.php"];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)delivery2Data:(NSString*)restaraunt_id completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"delivery/get_categories.php?restaraunt_id=",restaraunt_id];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)delivery3Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"delivery/get_dishes.php?category_id=",category_id];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)mapForAllData:(NSString*)category_id completion:(void (^)(NSArray* array))completion{
+     NSString *url = [urlStr stringByAppendingString:@"map/get_map.php"];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
+
 +(NSArray*)getMainMenu{
     return  @[ @{title_key: @"АКЦИИ", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"1"]},
                @{title_key: @"СПРАВОЧНИК", details_key: @"Организации города, адреса, телефоны", image_key: [UIImage imageNamed:@"2"]},

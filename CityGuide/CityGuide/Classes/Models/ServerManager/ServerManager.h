@@ -14,9 +14,11 @@ static NSString *details_key = @"details";
 static NSString *image_key = @"image";
 static NSString *name_key = @"name";
 static NSString *phone_key = @"phone";
+static NSString *phones_key = @"phones";
 static NSString *address_key = @"address";
 static NSString *coordinates_key = @"coordinates";
 static NSString *description_key = @"description";
+static NSString *price_key = @"price";
 
 @interface ServerManager : NSObject
 
@@ -27,5 +29,8 @@ static NSString *description_key = @"description";
 +(void)directory3Data:(NSString*)subcategory_id forMap:(BOOL)forMap completion:(void (^)(NSArray* array))completion;
 +(void)newsData:(void (^)(NSArray* array))completion;
 +(void)taxiData:(void (^)(NSArray* array))completion;
-
++(void)delivery1Data:(void (^)(NSArray* array))completion;
++(void)delivery2Data:(NSString*)restaraunt_id completion:(void (^)(NSArray* array))completion;
++(void)delivery3Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
++(void)mapForAllData:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
 @end

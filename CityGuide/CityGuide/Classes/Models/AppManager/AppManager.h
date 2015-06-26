@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ServerManager.h"
 #import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 @interface AppManager : NSObject
 
 +(void)showProgressBar;
 +(void)hideProgressBar;
 +(void)showMessage:(NSString*)message;
-
++(UIBarButtonItem*)backetButton:(UIViewController*)controller;
 
 @end

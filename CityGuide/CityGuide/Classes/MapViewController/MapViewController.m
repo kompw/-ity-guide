@@ -45,23 +45,26 @@ static NSInteger hightDownCategoriesButton = 38;
         categoriesButton.translatesAutoresizingMaskIntoConstraints = YES;
         categoriesButton.frame = CGRectMake(categoriesButton.frame.origin.x, - categoriesButton.frame.size.height, categoriesButton.frame.size.width, categoriesButton.frame.size.height);
         
-        camera = [GMSCameraPosition cameraWithLatitude:self.coordinates.latitude  longitude:self.coordinates.longitude zoom:6];
+        camera = [GMSCameraPosition cameraWithLatitude:self.coordinates.latitude  longitude:self.coordinates.longitude zoom:10];
     }else{
         downCategoriesButton.translatesAutoresizingMaskIntoConstraints = YES;
         downCategoriesButton.frame = CGRectMake(downCategoriesButton.frame.origin.x, downCategoriesButton.frame.origin.y - hightDownCategoriesButton, downCategoriesButton.frame.size.width, downCategoriesButton.frame.size.height);
         
-        camera = [GMSCameraPosition cameraWithLatitude:59.95907  longitude:30.318617 zoom:6];
+        camera = [GMSCameraPosition cameraWithLatitude:55.436504  longitude:37.763629 zoom:10];
     }
     
     
     self.map = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.boxView.frame.size.width, self.boxView.frame.size.height) camera:camera];
-    self.map.myLocationEnabled = YES;
     [self.boxView addSubview:self.map];
     
     //set marker
     if (self.companyName) {
         [self  createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates];
     }
+}
+
+-(void)viewDidLayoutSubviews{
+    self.map.frame = CGRectMake(0, 0, self.boxView.frame.size.width, self.boxView.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,7 +112,7 @@ static NSInteger hightDownCategoriesButton = 38;
         [data addObject:dic[name_key]];
     }
     
-    [ActionSheetStringPicker showPickerWithTitle:@"Выберите категорию" rows:data initialSelection:selectedIndexCategories
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc]  initWithTitle:@"Категория" rows:data initialSelection:selectedIndexCategories
                                        doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
                                            selectedIndexCategories = selectedIndex;
                                            [categoriesButton setTitle:selectedValue forState:UIControlStateNormal];
@@ -119,6 +122,8 @@ static NSInteger hightDownCategoriesButton = 38;
                                        }
                                      cancelBlock:^(ActionSheetStringPicker *picker) {}
                                           origin:categoriesButton];
+    
+     [self showActionSheetPicker:picker];
 }
 
 -(void)showDownCategories{
@@ -127,7 +132,7 @@ static NSInteger hightDownCategoriesButton = 38;
         [data addObject:dic[name_key]];
     }
     
-    [ActionSheetStringPicker showPickerWithTitle:@"Выберите субкатегорию" rows:data initialSelection:selectedIndexDownCategories
+    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc]  initWithTitle:@"Субкатегория" rows:data initialSelection:selectedIndexDownCategories
                                        doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
                                            selectedIndexDownCategories = selectedIndex;
                                            [downCategoriesButton setTitle:selectedValue forState:UIControlStateNormal];
@@ -146,15 +151,22 @@ static NSInteger hightDownCategoriesButton = 38;
                                        }
                                      cancelBlock:^(ActionSheetStringPicker *picker) {}
                                           origin:downCategoriesButton];
+    
+    [self showActionSheetPicker:picker];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)showActionSheetPicker:(ActionSheetStringPicker*)picker{
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"Выбрать"  style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIFont *font = [UIFont boldSystemFontOfSize:17];
+    [item1 setTitleTextAttributes:@{NSFontAttributeName: font} forState:UIControlStateNormal];
+    
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Отмена"  style:UIBarButtonItemStylePlain target:nil action:nil];
+    [item2 setTitleTextAttributes:@{NSFontAttributeName: font} forState:UIControlStateNormal];
+    
+    [picker setDoneButton:item1];
+    [picker setCancelButton:item2];
+    [picker showActionSheetPicker];
 }
-*/
+
 
 @end
