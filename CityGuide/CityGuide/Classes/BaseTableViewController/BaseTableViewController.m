@@ -347,6 +347,10 @@ typedef NS_ENUM(NSInteger, mainMenu) {
                 [optionMenu addAction:alert];
             }
             
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            }];
+            [optionMenu addAction:cancel];
+            
             [self presentViewController:optionMenu animated:YES completion:nil];
         }
             break;

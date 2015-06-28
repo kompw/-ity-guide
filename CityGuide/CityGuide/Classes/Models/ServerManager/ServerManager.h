@@ -19,6 +19,7 @@ static NSString *address_key = @"address";
 static NSString *coordinates_key = @"coordinates";
 static NSString *description_key = @"description";
 static NSString *price_key = @"price";
+static NSString *email_key = @"email";
 
 @interface ServerManager : NSObject
 

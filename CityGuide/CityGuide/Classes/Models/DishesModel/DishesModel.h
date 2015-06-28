@@ -12,4 +12,5 @@
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *urlImage;
 @property (nonatomic,readwrite) NSInteger count;
+@property (nonatomic,readwrite) NSInteger price;
 @end

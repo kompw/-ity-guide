@@ -17,5 +17,5 @@
 -(NSInteger)countDishes;
 
 -(void)newRestaraunt:(NSDictionary*)restarauntModel;
--(void)addDishes:(NSDictionary*)dishesModel andPieces:(NSInteger)pieces;
+-(BOOL)addDishes:(NSDictionary*)dishesModel andPieces:(NSInteger)pieces;
 @end
