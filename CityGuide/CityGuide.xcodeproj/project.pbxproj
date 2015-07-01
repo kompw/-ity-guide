@@ -22,6 +22,8 @@
 		4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */; };
 		4E3C234B1B395CCE009BBB34 /* CityGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */; };
 		4E555EE01B39BF17009253DC /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E555EDF1B39BF17009253DC /* ServerManager.m */; };
+		766529BE1B43F6F30081EB41 /* PosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766529BC1B43F6F30081EB41 /* PosterViewController.m */; };
+		766529BF1B43F6F30081EB41 /* PosterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766529BD1B43F6F30081EB41 /* PosterViewController.xib */; };
 		7676EBB21B3AB7FB00CD967D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */; };
 		7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */; };
 		7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */; };
@@ -82,6 +84,9 @@
 		4E555EDE1B39BF17009253DC /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		4E555EDF1B39BF17009253DC /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
 		697B2D094C3C2F9EE6755061 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		766529BB1B43F6F30081EB41 /* PosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterViewController.h; sourceTree = "<group>"; };
+		766529BC1B43F6F30081EB41 /* PosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterViewController.m; sourceTree = "<group>"; };
+		766529BD1B43F6F30081EB41 /* PosterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosterViewController.xib; sourceTree = "<group>"; };
 		7676EBAF1B3AB7FB00CD967D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewController.xib; sourceTree = "<group>"; };
@@ -245,13 +250,7 @@
 		4E555D6D1B396DD6009253DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7692874A1B3D861B003E6491 /* BasketViewController */,
-				769287441B3D79FE003E6491 /* DishesViewController */,
-				7676EBD81B3C18AD00CD967D /* SendMessageViewController */,
-				7676EBBA1B3AD28400CD967D /* CompanyViewController */,
-				7676EBBB1B3AD28400CD967D /* MapViewController */,
-				7676EBB41B3AB82F00CD967D /* BaseDetailViewController */,
-				7676EBAE1B3AB7FB00CD967D /* BaseTableViewController */,
+				766529B81B43DD4B0081EB41 /* ViewControllers */,
 				4E555D7E1B398DE7009253DC /* Models */,
 				4E555D7F1B398DE7009253DC /* Views */,
 			);
@@ -296,6 +295,31 @@
 				CAECDDE46DEDE93450892610 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		766529B81B43DD4B0081EB41 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7692874A1B3D861B003E6491 /* BasketViewController */,
+				769287441B3D79FE003E6491 /* DishesViewController */,
+				7676EBD81B3C18AD00CD967D /* SendMessageViewController */,
+				766529BA1B43F6E10081EB41 /* PosterViewController */,
+				7676EBBA1B3AD28400CD967D /* CompanyViewController */,
+				7676EBBB1B3AD28400CD967D /* MapViewController */,
+				7676EBB41B3AB82F00CD967D /* BaseDetailViewController */,
+				7676EBAE1B3AB7FB00CD967D /* BaseTableViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		766529BA1B43F6E10081EB41 /* PosterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				766529BB1B43F6F30081EB41 /* PosterViewController.h */,
+				766529BC1B43F6F30081EB41 /* PosterViewController.m */,
+				766529BD1B43F6F30081EB41 /* PosterViewController.xib */,
+			);
+			path = PosterViewController;
 			sourceTree = "<group>";
 		};
 		7676EBAE1B3AB7FB00CD967D /* BaseTableViewController */ = {
@@ -484,6 +508,7 @@
 				4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */,
 				7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */,
 				769287591B3DA2B7003E6491 /* DishesCell.xib in Resources */,
+				766529BF1B43F6F30081EB41 /* PosterViewController.xib in Resources */,
 				7692874F1B3D8629003E6491 /* BasketViewController.xib in Resources */,
 				7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */,
 				7676EBC51B3AD2AB00CD967D /* CompanyViewController.xib in Resources */,
@@ -561,6 +586,7 @@
 				4E3567241B39CD8D00ADBA7F /* AppManager.m in Sources */,
 				7676EBDD1B3C18B700CD967D /* SendMessageViewController.m in Sources */,
 				7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */,
+				766529BE1B43F6F30081EB41 /* PosterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +713,7 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b585b10f-25c9-49a1-83bb-1f539c3ee73a";
 			};
 			name = Debug;
 		};
@@ -701,6 +728,7 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b585b10f-25c9-49a1-83bb-1f539c3ee73a";
 			};
 			name = Release;
 		};

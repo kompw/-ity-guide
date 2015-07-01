@@ -12,6 +12,7 @@
 #import "CompanyViewController.h"
 #import "SendMessageViewController.h"
 #import "DishesViewController.h"
+#import "PosterViewController.h"
 
 #import "SendView.h"
 #import "MainMenuCell.h"
@@ -198,16 +199,46 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             }];
         }
             break;
-    
+        case Poster1:{
+            self.title = @"Объявления";
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell  description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+   
+            [ServerManager poster1Data:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+           break;
+        case Poster2:{
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell  description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            [ServerManager poster2Data:self.numberId.description completion:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
+        case Poster3:{
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell  description] owner:self options:nil] firstObject];
+            self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            
+            [ServerManager poster3Data:self.numberId.description completion:^(NSArray *array) {
+                dataSource = array;
+                [self.tableView reloadData];
+            }];
+        }
+            break;
         default:
             break;
     }
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -225,6 +256,8 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     [sendView.sendButton addTarget:self action:@selector(openSendController) forControlEvents:UIControlEventTouchUpInside];
     
     switch (self.controllerType) {
+        case Poster2:
+        case Poster1:
         case MainMenu:
             return nil;
             break;
@@ -249,6 +282,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case Delivery3:
             [sendView.sendButton setTitle:@"Разместить ресторан" forState: UIControlStateNormal];
             break;
+        case Poster3:
+            [sendView.sendButton setTitle:@"Разместить объявление" forState: UIControlStateNormal];
+            break;
         default:
             break;
     }
@@ -270,20 +306,21 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              cell = [self textWithImageCell:indexPath andTitle:model[title_key] andImageUrl:model[image_key]];
          }
              break;
+         case Poster2:
+         case Poster1:
          case Delivery2:
          case Directory1:
          case Directory2:{
              cell = [self textCell:indexPath andModel:model];
          }
              break;
+         case Poster3:
+         case Delivery3:
          case Delivery1:
          case Taxi:
          case Directory3:{
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
          }
-             break;
-        case Delivery3:
-             cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
              break;
          default:
              break;
@@ -379,7 +416,28 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             [self.navigationController pushViewController:[dishesViewController init] animated:YES];
         }
             break;
-
+        case Poster1:{
+            BaseTableViewController *baseTableViewController = [BaseTableViewController alloc];
+            baseTableViewController.title = model[name_key];
+            baseTableViewController.numberId = model[id_key];
+            baseTableViewController.controllerType = Poster2;
+            [self.navigationController pushViewController:[baseTableViewController init] animated:YES];
+        }
+            break;
+        case Poster2:{
+            BaseTableViewController *baseTableViewController = [BaseTableViewController alloc];
+            baseTableViewController.title = model[name_key];
+            baseTableViewController.numberId = model[id_key];
+            baseTableViewController.controllerType = Poster3;
+            [self.navigationController pushViewController:[baseTableViewController init] animated:YES];
+        }
+            break;
+        case Poster3:{
+            PosterViewController *posterViewController = [PosterViewController alloc];
+            posterViewController.souceDictionary = model;
+            [self.navigationController pushViewController:[posterViewController init] animated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -448,7 +506,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             baseViewController.controllerType = Delivery1;
             break;
         case PosterTab:
-            baseViewController.controllerType = Poster;
+            baseViewController.controllerType = Poster1;
             break;
             
         default:

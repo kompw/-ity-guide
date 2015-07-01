@@ -21,7 +21,9 @@ typedef NS_ENUM(NSUInteger, Controller) {
     Delivery1,
     Delivery2,
     Delivery3,
-    Poster
+    Poster1,
+    Poster2,
+    Poster3
 };
 
 @interface BaseTableViewController : UIViewController

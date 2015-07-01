@@ -12,6 +12,7 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MessageUI/MessageUI.h>
+#import "WToast.h"
 
 static NSString *reuseIdentifier = @"cell";
 
@@ -52,9 +53,7 @@ static NSString *reuseIdentifier = @"cell";
     }
 }
 
--(BOOL)addDishes:(NSDictionary*)dishesModel andPieces:(NSInteger)pieces{
-    __block BOOL statusAdd = YES;
-    
+-(void)addDishes:(NSDictionary*)dishesModel andPieces:(NSInteger)pieces atController:(UIViewController*)controller{
     if (self.restarauntModelOther) {
         UIAlertController *optionMenu = [UIAlertController alertControllerWithTitle:@"" message:@"Отчистить корзину и добавить новое блюдо?" preferredStyle:UIAlertControllerStyleAlert];
         
@@ -63,24 +62,24 @@ static NSString *reuseIdentifier = @"cell";
                 [self.tableView reloadData];
                 [self addNewDishes:dishesModel andPieces:pieces];
                 
-                self.restarauntModelMain = self.restarauntModelOther;
+                self.restarauntModelMain = [self.restarauntModelOther copy];
+                self.restarauntModelOther = nil;
                 
-                statusAdd = YES;
+               [WToast showWithText:@"Товар добавлен в корзину!" duration:kWTShort roundedCorners:YES];
             }];
         
             UIAlertAction *noButtom = [UIAlertAction actionWithTitle:@"Нет" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                statusAdd = NO;
+                [WToast showWithText:@"Товар не добавлен!" duration:kWTShort roundedCorners:YES];
             }];
         
             [optionMenu addAction:yesButtom];
             [optionMenu addAction:noButtom];
      
-        [self presentViewController:optionMenu animated:YES completion:nil];
+        [controller presentViewController:optionMenu animated:YES completion:nil];
     }else{
         [self addNewDishes:dishesModel andPieces:pieces];
+        [WToast showWithText:@"Товар добавлен в корзину!" duration:kWTShort roundedCorners:YES];
     }
-    
-    return statusAdd;
 }
 
 -(NSInteger)countDishes{

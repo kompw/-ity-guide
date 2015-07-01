@@ -20,6 +20,8 @@ static NSString *coordinates_key = @"coordinates";
 static NSString *description_key = @"description";
 static NSString *price_key = @"price";
 static NSString *email_key = @"email";
+static NSString *created_key = @"created";
+static NSString *author_key = @"author";
 
 @interface ServerManager : NSObject
 
@@ -33,5 +35,9 @@ static NSString *email_key = @"email";
 +(void)delivery1Data:(void (^)(NSArray* array))completion;
 +(void)delivery2Data:(NSString*)restaraunt_id completion:(void (^)(NSArray* array))completion;
 +(void)delivery3Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
-+(void)mapForAllData:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
++(void)mapForAllData:(void (^)(NSArray* array))completion;
++(void)poster1Data:(void (^)(NSArray* array))completion;
++(void)poster2Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
++(void)poster3Data:(NSString*)subcategory_id completion:(void (^)(NSArray* array))completion;
++(void)sendNewPosterWithSubcategory:(NSString*)subcategory_id andImage:(NSData*)image andParameters:(NSDictionary*)parameters;
 @end

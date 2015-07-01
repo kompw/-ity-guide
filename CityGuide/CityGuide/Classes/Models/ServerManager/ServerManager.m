@@ -67,11 +67,47 @@ static NSString *urlStr= @"http://citymy.ru/api/";
     [self baseGetReqestWithUrk:url completion:completion];
 }
 
-+(void)mapForAllData:(NSString*)category_id completion:(void (^)(NSArray* array))completion{
++(void)mapForAllData:(void (^)(NSArray* array))completion{
      NSString *url = [urlStr stringByAppendingString:@"map/get_map.php"];
     [self baseGetReqestWithUrk:url completion:completion];
 }
 
++(void)poster1Data:(void (^)(NSArray* array))completion{
+    NSString *url = [urlStr stringByAppendingString:@"ads/get_categories.php"];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)poster2Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"ads/get_subcategories.php?category_id=",category_id];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)poster3Data:(NSString*)subcategory_id completion:(void (^)(NSArray* array))completion{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"ads/get_ads.php?subcategory_id=",subcategory_id];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)sendNewPosterWithSubcategory:(NSString*)subcategory_id andImage:(NSData*)image andParameters:(NSDictionary*)parameters{
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"ads/ads/create_ads.php=",subcategory_id];
+    
+    [AppManager showProgressBar];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFormData:image name:@"image"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject isEqual:@"0"]) {
+            [AppManager showMessage:@"Сообщение отправлено"];
+        }else  if ([responseObject isEqual:@"1"]){
+            [AppManager showMessage:@"Ошибка, нет всех данных"];
+        }else
+            [AppManager showMessage:@"Ошибка"];
+        
+        [AppManager hideProgressBar];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [AppManager showMessage:error.description];
+        [AppManager hideProgressBar];
+    }];
+}
 
 +(NSArray*)getMainMenu{
     return  @[ @{title_key: @"АКЦИИ", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"1"]},

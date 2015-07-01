@@ -9,7 +9,6 @@
 #import "DishesViewController.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "WToast.h"
 
 @interface DishesViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *image;
@@ -45,12 +44,12 @@
 }
 
 - (IBAction)addBasket:(id)sender {
-    BasketViewController *basketViewController = [BasketViewController sharedManager];
-    if ([basketViewController addDishes:self.souceDictionary andPieces:self.numberPiece]){
-        [WToast showWithText:@"Товар добавлен в корзину!" duration:kWTShort roundedCorners:YES];
-    }else{
-        [WToast showWithText:@"Товар не добавлен!" duration:kWTShort roundedCorners:YES];
+    if (self.numberPiece == 0) {
+        return;
     }
+    
+    BasketViewController *basketViewController = [BasketViewController sharedManager];
+    [basketViewController addDishes:self.souceDictionary andPieces:self.numberPiece atController:self];
 }
 
 -(void)openBacket{

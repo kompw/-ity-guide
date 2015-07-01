@@ -60,6 +60,10 @@ static NSInteger hightDownCategoriesButton = 38;
     //set marker
     if (self.companyName) {
         [self  createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates];
+    }else{
+        [ServerManager mapForAllData:^(NSArray *array) {
+             [self workWithServerArray:array];
+        }];
     }
 }
 
@@ -70,6 +74,14 @@ static NSInteger hightDownCategoriesButton = 38;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)workWithServerArray:(NSArray*)serverArray{
+    for (NSDictionary *dic in serverArray) {
+        NSArray *subStrings = [dic[coordinates_key] componentsSeparatedByString:@";"];
+        
+        [self createMarkerWithName:dic[name_key] andAdress:dic[address_key] andCoordinates:CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue])];
+    }
 }
 
 -(void)createMarkerWithName:(NSString*)name andAdress:(NSString*)adress andCoordinates:(CLLocationCoordinate2D) coordinates{
@@ -140,13 +152,7 @@ static NSInteger hightDownCategoriesButton = 38;
                                            [self.map clear];
                                            NSDictionary *dic = self.downCategories[selectedIndexDownCategories];
                                            [ServerManager directory3Data:[dic[id_key] description] forMap:YES completion:^(NSArray *array) {
-                                               
-                                               for (NSDictionary *dic in array) {
-                                                   NSArray *subStrings = [dic[coordinates_key] componentsSeparatedByString:@";"];
-                                                   
-                                                   [self createMarkerWithName:dic[name_key] andAdress:dic[address_key] andCoordinates:CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue])];
-                                               }
-                                               
+                                               [self workWithServerArray:array];
                                            }];
                                        }
                                      cancelBlock:^(ActionSheetStringPicker *picker) {}
@@ -167,6 +173,7 @@ static NSInteger hightDownCategoriesButton = 38;
     [picker setCancelButton:item2];
     [picker showActionSheetPicker];
 }
+
 
 
 @end
