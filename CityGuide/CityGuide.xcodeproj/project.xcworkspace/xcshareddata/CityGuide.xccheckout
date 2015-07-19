@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>72137940-9BB1-4365-913F-E5E937162A26</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CityGuide</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E019622A14774FBCF1660EE0296F23E444FB974D</key>
+		<string>https://github.com/kompw/city-guide.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CityGuide/CityGuide.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E019622A14774FBCF1660EE0296F23E444FB974D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kompw/city-guide.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E019622A14774FBCF1660EE0296F23E444FB974D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E019622A14774FBCF1660EE0296F23E444FB974D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>city-guide</string>
+		</dict>
+	</array>
+</dict>
+</plist>

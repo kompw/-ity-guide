@@ -21,10 +21,6 @@
     baseViewController.controllerType = MainMenu;
     
     UINavigationController *navigat = [[UINavigationController alloc]initWithRootViewController:[baseViewController init]];
-    navigat.navigationBar.barTintColor = [UIColor orangeColor];
-    navigat.navigationBar.tintColor = [UIColor whiteColor];
-    [navigat.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    navigat.navigationBar.translucent = NO;
     self.window.rootViewController = navigat;
     [self.window makeKeyAndVisible];
     

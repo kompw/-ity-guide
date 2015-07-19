@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
-#import "BaseDetailViewController.h"
+#import "SharesDetailController.h"
 #import "MapViewController.h"
 #import "CompanyViewController.h"
 #import "SendMessageViewController.h"
@@ -47,6 +47,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     [super viewDidLoad];
     dataSource = @[];
     self.tableView.sectionHeaderHeight = 0;
+    self.navigationItem.rightBarButtonItem = [AppManager plusButton:self andSelector:@selector(openSendController)];
     
     switch (self.controllerType) {
         case MainMenu:{
@@ -75,9 +76,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
         case Directory1:{
             self.title = @"Справочник";
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell description] owner:self options:nil] firstObject];
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
             self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             
             SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
             self.tableView.sectionHeaderHeight = sendView.frame.size.height;
@@ -94,9 +95,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             self.tableView.rowHeight = v.frame.size.height;
             [self.tableView registerNib:[UINib nibWithNibName:[TextCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             
-            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
-            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
-            
             [ServerManager  directory2Data:self.numberId.description forMap:NO completion:^(NSArray *array) {
                 dataSource = array;
                 [self.tableView reloadData];
@@ -108,9 +106,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
             self.tableView.rowHeight = v.frame.size.height;
             [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
-            
-            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
-            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
             
             [ServerManager  directory3Data:self.numberId.description forMap:NO completion:^(NSArray *array) {
                 dataSource = array;
@@ -253,9 +248,12 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+    [AppManager roundMyView:sendView.sendButton borderRadius:5 borderWidth:0 color:nil];
     [sendView.sendButton addTarget:self action:@selector(openSendController) forControlEvents:UIControlEventTouchUpInside];
     
     switch (self.controllerType) {
+        case Directory2:
+        case Directory3:
         case Poster2:
         case Poster1:
         case MainMenu:
@@ -267,8 +265,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
             
         case Directory1:
-        case Directory2:
-        case Directory3:
             [sendView.sendButton setTitle:@"Разместить Компанию" forState: UIControlStateNormal];
             break;
         case News:
@@ -309,10 +305,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
          case Poster2:
          case Poster1:
          case Delivery2:
-         case Directory1:
-         case Directory2:{
              cell = [self textCell:indexPath andModel:model];
-         }
              break;
          case Poster3:
          case Delivery3:
@@ -322,11 +315,20 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
          }
              break;
+        case Directory1:
+             cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
+             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+             break;
+        case Directory2:
+             cell = [self textCell:indexPath andModel:model];
+             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+             break;
          default:
              break;
      }
      
-
+    cell.layoutMargins = UIEdgeInsetsZero;
+    cell.preservesSuperviewLayoutMargins = NO;
   return cell;
  }
 
@@ -340,8 +342,8 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
         case News:
         case Shares:{
-            BaseDetailViewController *baseDetailViewController = [BaseDetailViewController alloc];
-            baseDetailViewController.detailData = model[details_key];
+            SharesDetailController *baseDetailViewController = [SharesDetailController alloc];
+            baseDetailViewController.souceDictionary = model;
             [self.navigationController pushViewController:[baseDetailViewController init] animated:YES];
         }
             break;
@@ -465,6 +467,19 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     textWithImageCell.title.text = title;
     [textWithImageCell.image sd_setImageWithURL:[NSURL URLWithString:url]];
     
+    switch (self.controllerType) {
+        case Shares:
+            textWithImageCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            textWithImageCell.image.contentMode = UIViewContentModeScaleAspectFit;
+        case Directory1:
+            textWithImageCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+        case Directory3:
+            textWithImageCell.title.textColor = colorTextBlue();
+            break;
+        default:
+            break;
+    }
     
     return textWithImageCell;
 }
@@ -476,6 +491,14 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         textWithImageCell = [[[NSBundle mainBundle] loadNibNamed:[TextCell description] owner:self options:nil] firstObject];
     }
     textWithImageCell.title.text = model[name_key];
+    
+     switch (self.controllerType) {
+         case Directory2:
+             textWithImageCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+             break;
+         default:
+             break;
+     }
 
     return textWithImageCell;
 }

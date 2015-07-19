@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseDetailViewController : UIViewController
-@property NSString *detailData;
+@interface SharesDetailController : UIViewController
+@property (nonatomic,strong) NSDictionary *souceDictionary;
 @end

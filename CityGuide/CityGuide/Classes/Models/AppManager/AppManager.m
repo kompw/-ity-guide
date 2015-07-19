@@ -20,7 +20,7 @@
 }
 
 +(void)showMessage:(NSString*)message{
-    UIAlertView *alertView =  [[UIAlertView alloc]initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    UIAlertView *alertView =  [[UIAlertView alloc]initWithTitle:@"" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil]; 
     [alertView show];
 }
 
@@ -29,6 +29,18 @@
     [backet setTitle:@"Корзина" forState:UIControlStateNormal];
     [backet addTarget:controller action:@selector(openBacket) forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:backet];
+}
+
++(UIBarButtonItem*)plusButton:(UIViewController*)controller andSelector:(SEL)s{
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:controller action:s];
+}
+
++(void)roundMyView:(UIView*)view borderRadius:(CGFloat)radius borderWidth:(CGFloat)border color:(UIColor*)color{
+    CALayer *layer = [view layer];
+    layer.masksToBounds = YES;
+    layer.cornerRadius = radius;
+    layer.borderWidth = border;
+    layer.borderColor = color.CGColor;
 }
 
 @end

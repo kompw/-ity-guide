@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,12 +13,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0M-6W-Xij">
-                        <rect key="frame" x="8" y="8" width="304" height="35"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1M-pr-svh">
-                        <rect key="frame" x="17" y="8" width="295" height="35"/>
+                        <rect key="frame" x="8" y="4" width="304" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -28,17 +23,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="d1M-pr-svh" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="8" id="17x-C8-9IM"/>
-                    <constraint firstItem="d1M-pr-svh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="3oy-lX-5Ka"/>
-                    <constraint firstItem="d1M-pr-svh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="4.5" id="NAt-v4-z2s"/>
-                    <constraint firstItem="Q0M-6W-Xij" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Q2P-39-hK0"/>
-                    <constraint firstAttribute="trailing" secondItem="Q0M-6W-Xij" secondAttribute="trailing" constant="8" id="SwS-ZG-WHZ"/>
-                    <constraint firstAttribute="bottom" secondItem="Q0M-6W-Xij" secondAttribute="bottom" id="dC5-lr-4vu"/>
-                    <constraint firstItem="d1M-pr-svh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="yqh-hC-31O"/>
-                    <constraint firstItem="Q0M-6W-Xij" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zJU-iD-kFe"/>
+                    <constraint firstItem="d1M-pr-svh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="7ce-dc-bJN"/>
+                    <constraint firstItem="d1M-pr-svh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Ftn-vC-Mbl"/>
+                    <constraint firstAttribute="trailing" secondItem="d1M-pr-svh" secondAttribute="trailing" constant="8" id="QfI-Y3-CuN"/>
+                    <constraint firstAttribute="bottom" secondItem="d1M-pr-svh" secondAttribute="bottom" constant="4" id="VVN-6o-uiS"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="title" destination="d1M-pr-svh" id="twh-ot-wcN"/>
             </connections>

@@ -26,8 +26,8 @@
 		766529BF1B43F6F30081EB41 /* PosterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766529BD1B43F6F30081EB41 /* PosterViewController.xib */; };
 		7676EBB21B3AB7FB00CD967D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */; };
 		7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */; };
-		7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */; };
-		7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */; };
+		7676EBB81B3AB85300CD967D /* SharesDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBB61B3AB85300CD967D /* SharesDetailController.m */; };
+		7676EBB91B3AB85300CD967D /* SharesDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBB71B3AB85300CD967D /* SharesDetailController.xib */; };
 		7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBBD1B3AD29D00CD967D /* MapViewController.m */; };
 		7676EBC01B3AD29D00CD967D /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBBE1B3AD29D00CD967D /* MapViewController.xib */; };
 		7676EBC41B3AD2AB00CD967D /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7676EBC21B3AD2AB00CD967D /* CompanyViewController.m */; };
@@ -90,9 +90,9 @@
 		7676EBAF1B3AB7FB00CD967D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		7676EBB01B3AB7FB00CD967D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		7676EBB11B3AB7FB00CD967D /* BaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewController.xib; sourceTree = "<group>"; };
-		7676EBB51B3AB85300CD967D /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
-		7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailViewController.m; sourceTree = "<group>"; };
-		7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseDetailViewController.xib; sourceTree = "<group>"; };
+		7676EBB51B3AB85300CD967D /* SharesDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharesDetailController.h; sourceTree = "<group>"; };
+		7676EBB61B3AB85300CD967D /* SharesDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharesDetailController.m; sourceTree = "<group>"; };
+		7676EBB71B3AB85300CD967D /* SharesDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharesDetailController.xib; sourceTree = "<group>"; };
 		7676EBBC1B3AD29D00CD967D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7676EBBD1B3AD29D00CD967D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7676EBBE1B3AD29D00CD967D /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
@@ -335,9 +335,9 @@
 		7676EBB41B3AB82F00CD967D /* BaseDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7676EBB51B3AB85300CD967D /* BaseDetailViewController.h */,
-				7676EBB61B3AB85300CD967D /* BaseDetailViewController.m */,
-				7676EBB71B3AB85300CD967D /* BaseDetailViewController.xib */,
+				7676EBB51B3AB85300CD967D /* SharesDetailController.h */,
+				7676EBB61B3AB85300CD967D /* SharesDetailController.m */,
+				7676EBB71B3AB85300CD967D /* SharesDetailController.xib */,
 			);
 			path = BaseDetailViewController;
 			sourceTree = "<group>";
@@ -517,7 +517,7 @@
 				7676EBDC1B3C18B700CD967D /* SendMessageViewController.xib in Resources */,
 				769287491B3D7A0D003E6491 /* DishesViewController.xib in Resources */,
 				7676EBB31B3AB7FB00CD967D /* BaseTableViewController.xib in Resources */,
-				7676EBB91B3AB85300CD967D /* BaseDetailViewController.xib in Resources */,
+				7676EBB91B3AB85300CD967D /* SharesDetailController.xib in Resources */,
 				4E3567361B39F32700ADBA7F /* TextWithImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +582,7 @@
 				769287531B3D9962003E6491 /* DishesModel.m in Sources */,
 				4E3C23311B395CCE009BBB34 /* main.m in Sources */,
 				4E35672B1B39D8E300ADBA7F /* MainMenuCell.m in Sources */,
-				7676EBB81B3AB85300CD967D /* BaseDetailViewController.m in Sources */,
+				7676EBB81B3AB85300CD967D /* SharesDetailController.m in Sources */,
 				4E3567241B39CD8D00ADBA7F /* AppManager.m in Sources */,
 				7676EBDD1B3C18B700CD967D /* SendMessageViewController.m in Sources */,
 				7676EBBF1B3AD29D00CD967D /* MapViewController.m in Sources */,
