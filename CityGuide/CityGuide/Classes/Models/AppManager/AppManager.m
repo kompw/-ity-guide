@@ -25,8 +25,9 @@
 }
 
 +(UIBarButtonItem*)backetButton:(UIViewController*)controller{
-    UIButton *backet = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 90, 30)];
-    [backet setTitle:@"Корзина" forState:UIControlStateNormal];
+    UIButton *backet = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [backet setImage:[UIImage imageNamed:@"cart_x.png"] forState:UIControlStateNormal];
+    
     [backet addTarget:controller action:@selector(openBacket) forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:backet];
 }

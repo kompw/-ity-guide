@@ -21,6 +21,7 @@
 #import "TextCell.h"
 #import "TextWithImageCell.h"
 #import "MainHeaderView.h"
+#import "TaxiCell.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -124,9 +125,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
        
         case Taxi:{
             self.title = @"Такси";
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TaxiCell description] owner:self options:nil] firstObject];
             self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            [self.tableView registerNib:[UINib nibWithNibName:[TaxiCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             
             SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
             self.tableView.sectionHeaderHeight = sendView.frame.size.height;
@@ -305,10 +306,19 @@ typedef NS_ENUM(NSInteger, mainMenu) {
          case Delivery2:
              cell = [self textCell:indexPath andModel:model];
              break;
+         
+         case Taxi:{
+             TaxiCell* textWithImageCell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+             if (textWithImageCell == nil) {
+                 textWithImageCell = [[[NSBundle mainBundle] loadNibNamed:[TaxiCell description] owner:self options:nil] firstObject];
+             }
+             [textWithImageCell setDataWithDictionary:model];
+         }
+             break;
+             
          case Poster3:
          case Delivery3:
          case Delivery1:
-         case Taxi:
          case Directory3:{
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
          }
@@ -505,7 +515,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 
 -(void)actionMainMenu:(NSInteger)row{
     BaseTableViewController *baseViewController = [BaseTableViewController alloc];
-    
     switch (row) {
         case SharesTab:
             baseViewController.controllerType = Shares;

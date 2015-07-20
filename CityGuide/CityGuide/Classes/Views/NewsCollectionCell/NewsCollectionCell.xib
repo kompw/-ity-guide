@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -14,14 +14,14 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-gv-Ud1">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="35"/>
-                        <color key="backgroundColor" red="0.0" green="0.75294125080108643" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.52941176470588236" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-2C-6gK">
-                        <rect key="frame" x="8" y="0.0" width="142" height="33"/>
+                        <rect key="frame" x="8" y="8" width="134" height="19"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="mOo-8e-LD8"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="mOo-8e-LD8"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -36,7 +36,7 @@
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="Gk0-ja-hZH"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,7 +46,7 @@
                             <constraint firstAttribute="width" constant="80" id="1HW-QM-J5X"/>
                             <constraint firstAttribute="height" constant="15" id="hah-YP-rqn"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -63,11 +63,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="AuH-Xg-DXF" firstAttribute="top" secondItem="E0d-sx-U3Y" secondAttribute="bottom" constant="1" id="1rE-vZ-s2W"/>
-                <constraint firstAttribute="trailing" secondItem="Sok-2C-6gK" secondAttribute="trailing" id="4yB-q9-rBS"/>
+                <constraint firstAttribute="trailing" secondItem="Sok-2C-6gK" secondAttribute="trailing" constant="8" id="4yB-q9-rBS"/>
                 <constraint firstItem="yn1-a5-KDe" firstAttribute="top" secondItem="ZeQ-gv-Ud1" secondAttribute="bottom" id="BTO-HK-LVf"/>
                 <constraint firstItem="yn1-a5-KDe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ECa-dY-VTh"/>
                 <constraint firstItem="ZeQ-gv-Ud1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Efq-qG-dKP"/>
-                <constraint firstItem="Sok-2C-6gK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MLq-7K-e9q"/>
+                <constraint firstItem="Sok-2C-6gK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="MLq-7K-e9q"/>
                 <constraint firstItem="E0d-sx-U3Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="aP7-lY-RSA"/>
                 <constraint firstAttribute="trailing" secondItem="TVv-R2-W5F" secondAttribute="trailing" constant="48" id="cGc-EH-ziL"/>
                 <constraint firstItem="Sok-2C-6gK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="cop-4b-mm9"/>
@@ -79,7 +79,7 @@
                 <constraint firstItem="AuH-Xg-DXF" firstAttribute="top" secondItem="E0d-sx-U3Y" secondAttribute="bottom" constant="1" id="pkJ-lc-Via"/>
                 <constraint firstItem="E0d-sx-U3Y" firstAttribute="top" secondItem="yn1-a5-KDe" secondAttribute="bottom" constant="8" id="q37-Rj-7SQ"/>
                 <constraint firstAttribute="bottom" secondItem="TVv-R2-W5F" secondAttribute="bottom" constant="6" id="qxS-Wt-0Zm"/>
-                <constraint firstItem="yn1-a5-KDe" firstAttribute="top" secondItem="Sok-2C-6gK" secondAttribute="bottom" constant="2" id="tUu-hr-Nn4"/>
+                <constraint firstItem="yn1-a5-KDe" firstAttribute="top" secondItem="Sok-2C-6gK" secondAttribute="bottom" constant="8" id="tUu-hr-Nn4"/>
                 <constraint firstItem="ZeQ-gv-Ud1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="usU-Or-wmS"/>
                 <constraint firstAttribute="trailing" secondItem="ZeQ-gv-Ud1" secondAttribute="trailing" id="v3M-iY-JhD"/>
                 <constraint firstAttribute="trailing" secondItem="yn1-a5-KDe" secondAttribute="trailing" id="y3O-VT-nn3"/>

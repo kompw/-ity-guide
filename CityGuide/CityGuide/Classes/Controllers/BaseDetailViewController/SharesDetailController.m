@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UITextView *text;
+@property (weak, nonatomic) IBOutlet UILabel *date;
 
 
 
@@ -29,6 +30,7 @@
         self.name.text = self.souceDictionary[title_key];
         [self.image sd_setImageWithURL:self.souceDictionary[image_key]];
         self.text.text = self.souceDictionary[details_key];
+        self.date.text = self.souceDictionary[date_key];
     }
         
 }

@@ -94,6 +94,7 @@ static NSString *reuseIdentifier = @"cell";
     dishe.price = [dishesModel[price_key] integerValue];
     dishe.name = dishesModel[name_key];
     dishe.urlImage = dishesModel[image_key];
+    dishe.descrip= dishesModel[description_key];
     
     [dishes addObject:dishe];
     [self.tableView reloadData];
@@ -114,6 +115,8 @@ static NSString *reuseIdentifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Корзина";
+    self.tableView.estimatedRowHeight = 38;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:[DishesCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
@@ -166,10 +169,14 @@ static NSString *reuseIdentifier = @"cell";
         cell = [[[NSBundle mainBundle] loadNibNamed:[DishesCell description] owner:self options:nil] firstObject];
     }
     cell.name.text = model.name;
+    cell.descrip.text = model.descrip;
     [cell.image sd_setImageWithURL:[NSURL URLWithString:model.urlImage]];
     cell.countDishes.text = [NSString stringWithFormat:@"%ld",(long)model.count];
     cell.stepper.value = model.count;
     cell.delegate = self;
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
  
     return cell;
 }

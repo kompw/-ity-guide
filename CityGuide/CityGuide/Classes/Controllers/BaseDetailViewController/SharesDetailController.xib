@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SharesDetailController">
             <connections>
+                <outlet property="date" destination="Xui-pC-Khk" id="kmu-Xq-ZsV"/>
                 <outlet property="image" destination="oM3-7u-gzy" id="oG3-Ol-moT"/>
                 <outlet property="name" destination="QOb-eE-mAn" id="acG-2o-Lgy"/>
                 <outlet property="text" destination="bz6-L0-2QF" id="zHk-ga-XIz"/>
@@ -21,7 +22,7 @@
                     <rect key="frame" x="8" y="73" width="584" height="527"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOb-eE-mAn">
-                            <rect key="frame" x="8" y="8" width="568" height="24"/>
+                            <rect key="frame" x="8" y="8" width="462" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -38,19 +39,42 @@
                                 <constraint firstAttribute="height" constant="178" id="akT-Lw-rg0"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.09.15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xui-pC-Khk">
+                            <rect key="frame" x="496" y="16" width="80" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="WfU-60-AUE"/>
+                                <constraint firstAttribute="height" constant="15" id="vOX-5r-QhB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_x" translatesAutoresizingMaskIntoConstraints="NO" id="O93-M3-K09">
+                            <rect key="frame" x="478" y="19" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="fuq-7R-r9I"/>
+                                <constraint firstAttribute="width" constant="10" id="u2s-vT-qyL"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="QOb-eE-mAn" secondAttribute="trailing" constant="8" id="2lV-an-5K3"/>
+                        <constraint firstItem="Xui-pC-Khk" firstAttribute="leading" secondItem="O93-M3-K09" secondAttribute="trailing" constant="8" id="2Dm-iT-KQJ"/>
+                        <constraint firstItem="oM3-7u-gzy" firstAttribute="top" secondItem="Xui-pC-Khk" secondAttribute="bottom" constant="9" id="6OE-MD-1Ep"/>
                         <constraint firstAttribute="trailing" secondItem="bz6-L0-2QF" secondAttribute="trailing" constant="8" id="BGA-0q-Zz2"/>
                         <constraint firstItem="oM3-7u-gzy" firstAttribute="top" secondItem="QOb-eE-mAn" secondAttribute="bottom" constant="8" id="FCx-W2-EtM"/>
                         <constraint firstItem="QOb-eE-mAn" firstAttribute="leading" secondItem="bEl-un-du8" secondAttribute="leading" constant="8" id="IUR-5N-19c"/>
+                        <constraint firstItem="O93-M3-K09" firstAttribute="leading" secondItem="QOb-eE-mAn" secondAttribute="trailing" constant="8" id="Ili-ps-C3E"/>
                         <constraint firstItem="bz6-L0-2QF" firstAttribute="leading" secondItem="bEl-un-du8" secondAttribute="leading" constant="8" id="JGa-5a-M6c"/>
                         <constraint firstAttribute="trailing" secondItem="oM3-7u-gzy" secondAttribute="trailing" constant="8" id="Tm4-56-egJ"/>
                         <constraint firstAttribute="bottom" secondItem="bz6-L0-2QF" secondAttribute="bottom" id="WWE-6Y-X2k"/>
+                        <constraint firstAttribute="trailing" secondItem="Xui-pC-Khk" secondAttribute="trailing" constant="8" id="ZqS-n9-QJk"/>
+                        <constraint firstItem="O93-M3-K09" firstAttribute="top" secondItem="bEl-un-du8" secondAttribute="top" constant="19" id="dyN-bK-jIe"/>
                         <constraint firstItem="QOb-eE-mAn" firstAttribute="top" secondItem="bEl-un-du8" secondAttribute="top" constant="8" id="gB8-Nf-3z3"/>
                         <constraint firstItem="oM3-7u-gzy" firstAttribute="leading" secondItem="bEl-un-du8" secondAttribute="leading" constant="8" id="imL-fs-DA1"/>
+                        <constraint firstItem="oM3-7u-gzy" firstAttribute="top" secondItem="O93-M3-K09" secondAttribute="bottom" constant="11" id="k3A-6v-ySE"/>
                         <constraint firstItem="bz6-L0-2QF" firstAttribute="top" secondItem="oM3-7u-gzy" secondAttribute="bottom" constant="8" id="ktV-8y-x7v"/>
+                        <constraint firstItem="Xui-pC-Khk" firstAttribute="top" secondItem="bEl-un-du8" secondAttribute="top" constant="16" id="yBy-jt-GLg"/>
                     </constraints>
                 </view>
             </subviews>
@@ -64,4 +88,7 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
+    <resources>
+        <image name="time_x" width="10" height="10"/>
+    </resources>
 </document>

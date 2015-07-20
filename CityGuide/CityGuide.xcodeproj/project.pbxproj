@@ -21,6 +21,8 @@
 		4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233B1B395CCE009BBB34 /* Images.xcassets */; };
 		4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C233D1B395CCE009BBB34 /* LaunchScreen.xib */; };
 		4E3C234B1B395CCE009BBB34 /* CityGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */; };
+		4E47A7241B5D892600135168 /* TaxiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E47A7221B5D892600135168 /* TaxiCell.m */; };
+		4E47A7251B5D892600135168 /* TaxiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E47A7231B5D892600135168 /* TaxiCell.xib */; };
 		4E555EE01B39BF17009253DC /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E555EDF1B39BF17009253DC /* ServerManager.m */; };
 		762687951B5CFF15008B55E9 /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 762687941B5CFF15008B55E9 /* MainHeaderView.m */; };
 		762687971B5CFF24008B55E9 /* MainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762687961B5CFF24008B55E9 /* MainHeaderView.xib */; };
@@ -92,6 +94,9 @@
 		4E3C23441B395CCE009BBB34 /* CityGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C23491B395CCE009BBB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3C234A1B395CCE009BBB34 /* CityGuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityGuideTests.m; sourceTree = "<group>"; };
+		4E47A7211B5D892600135168 /* TaxiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxiCell.h; sourceTree = "<group>"; };
+		4E47A7221B5D892600135168 /* TaxiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxiCell.m; sourceTree = "<group>"; };
+		4E47A7231B5D892600135168 /* TaxiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxiCell.xib; sourceTree = "<group>"; };
 		4E555D891B399F03009253DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4E555EDE1B39BF17009253DC /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		4E555EDF1B39BF17009253DC /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
@@ -277,6 +282,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4E47A7201B5D891300135168 /* TaxiCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E47A7211B5D892600135168 /* TaxiCell.h */,
+				4E47A7221B5D892600135168 /* TaxiCell.m */,
+				4E47A7231B5D892600135168 /* TaxiCell.xib */,
+			);
+			path = TaxiCell;
+			sourceTree = "<group>";
+		};
 		4E555D6D1B396DD6009253DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +315,7 @@
 		4E555D7F1B398DE7009253DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E47A7201B5D891300135168 /* TaxiCell */,
 				762687EB1B5D15DF008B55E9 /* NewsCollectionCell */,
 				762687921B5CFEFD008B55E9 /* MainHeaderView */,
 				769287541B3DA29E003E6491 /* DishesCell */,
@@ -345,7 +361,7 @@
 				762687E51B5D127C008B55E9 /* NewsController */,
 				762687DF1B5D0C28008B55E9 /* NewsDetailController */,
 				762687D51B5D0A2C008B55E9 /* FilterMapController */,
-				7626879F1B5D09FB008B55E9 /* BaseDetailViewController */,
+				7626879F1B5D09FB008B55E9 /* SharesDetailController */,
 				762687A31B5D09FB008B55E9 /* BaseTableViewController */,
 				762687A71B5D09FB008B55E9 /* BasketViewController */,
 				762687AB1B5D09FB008B55E9 /* CompanyViewController */,
@@ -358,13 +374,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		7626879F1B5D09FB008B55E9 /* BaseDetailViewController */ = {
+		7626879F1B5D09FB008B55E9 /* SharesDetailController */ = {
 			isa = PBXGroup;
 			children = (
 				762687A01B5D09FB008B55E9 /* SharesDetailController.h */,
 				762687A11B5D09FB008B55E9 /* SharesDetailController.m */,
 				762687A21B5D09FB008B55E9 /* SharesDetailController.xib */,
 			);
+			name = SharesDetailController;
 			path = BaseDetailViewController;
 			sourceTree = "<group>";
 		};
@@ -599,6 +616,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E47A7251B5D892600135168 /* TaxiCell.xib in Resources */,
 				4E3567311B39F31500ADBA7F /* TextCell.xib in Resources */,
 				4E35672C1B39D8E300ADBA7F /* MainMenuCell.xib in Resources */,
 				762687D21B5D09FB008B55E9 /* PosterViewController.xib in Resources */,
@@ -683,6 +701,7 @@
 				769287581B3DA2B7003E6491 /* DishesCell.m in Sources */,
 				4E35673A1B3A09AE00ADBA7F /* SendView.m in Sources */,
 				4E3567351B39F32700ADBA7F /* TextWithImageCell.m in Sources */,
+				4E47A7241B5D892600135168 /* TaxiCell.m in Sources */,
 				4E3567301B39F31500ADBA7F /* TextCell.m in Sources */,
 				762687CD1B5D09FB008B55E9 /* InfoController.m in Sources */,
 				762687D91B5D0A5C008B55E9 /* FilterMapController.m in Sources */,

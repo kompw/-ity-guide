@@ -22,6 +22,7 @@ static NSString *price_key = @"price";
 static NSString *email_key = @"email";
 static NSString *created_key = @"created";
 static NSString *author_key = @"author";
+static NSString *date_key = @"date";
 
 @interface ServerManager : NSObject
 

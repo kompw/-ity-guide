@@ -18,6 +18,7 @@
 static NSString *reuseIdentifier = @"cell";
 
 @interface NewsController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *senderButton;
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (nonatomic, strong) NSArray *dataSource;
 @end
@@ -29,6 +30,8 @@ static NSString *reuseIdentifier = @"cell";
     [super viewDidLoad];
     self.title = @"Новости";
     self.navigationItem.rightBarButtonItem = [AppManager plusButton:self andSelector:@selector(openSendController)];
+    [AppManager roundMyView:self.senderButton borderRadius:5 borderWidth:0 color:nil];
+    [self.senderButton addTarget:self action:@selector(openSendController) forControlEvents:UIControlEventTouchUpInside];
 
     [self.collection registerNib:[UINib nibWithNibName:[NewsCollectionCell description] bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -64,7 +67,7 @@ static NSString *reuseIdentifier = @"cell";
     cell.title.text = model[title_key];
     [cell.image sd_setImageWithURL:[NSURL URLWithString:model[image_key]]];
     cell.describe.text =  model[details_key];
-    
+    cell.time.text = model[date_key];
     return cell;
 }
 
