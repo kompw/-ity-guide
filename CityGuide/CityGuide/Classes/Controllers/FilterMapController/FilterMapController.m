@@ -8,7 +8,8 @@
 
 #import "FilterMapController.h"
 
-@interface FilterMapController ()
+@interface FilterMapController ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

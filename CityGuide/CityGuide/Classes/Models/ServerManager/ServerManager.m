@@ -110,13 +110,13 @@ static NSString *urlStr= @"http://citymy.ru/api/";
 }
 
 +(NSArray*)getMainMenu{
-    return  @[ @{title_key: @"АКЦИИ", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"1"]},
-               @{title_key: @"СПРАВОЧНИК", details_key: @"Организации города, адреса, телефоны", image_key: [UIImage imageNamed:@"2"]},
-               @{title_key: @"КАРТА", details_key: @"Карта городских организаций", image_key: [UIImage imageNamed:@"3"]},
-               @{title_key: @"НОВОСТИ", details_key: @"Актуальные новости города", image_key: [UIImage imageNamed:@"4"]},
-               @{title_key: @"ТАКСИ", details_key: @"Службы такси города", image_key: [UIImage imageNamed:@"5"]},
-               @{title_key: @"ДОСТАВКА", details_key: @"Еда, цветы и другое", image_key: [UIImage imageNamed:@"6"]},
-               @{title_key: @"ОБЪЯВЛЕНИЯ", details_key: @"ОБЪЯВЛЕНИЯ", image_key: [UIImage imageNamed:@"1"]}
+    return  @[ @{title_key: @"Ации", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"action_x"]},
+               @{title_key: @"Справочник", details_key: @"Организации города, адреса, телефоны", image_key: [UIImage imageNamed:@"help_x"]},
+               @{title_key: @"Карта", details_key: @"Карта городских организаций", image_key: [UIImage imageNamed:@"map_x"]},
+               @{title_key: @"Новости", details_key: @"Актуальные новости города", image_key: [UIImage imageNamed:@"news_x"]},
+               @{title_key: @"Такси", details_key: @"Городские службы такси", image_key: [UIImage imageNamed:@"taxi_x"]},
+               @{title_key: @"Доставка", details_key: @"Доставка еды,цветов и прочего", image_key: [UIImage imageNamed:@"delivery_x"]},
+               @{title_key: @"Объявления", details_key: @"Продажа,покупка различных вещей", image_key: [UIImage imageNamed:@"ad_x"]}
              ];
 }
 

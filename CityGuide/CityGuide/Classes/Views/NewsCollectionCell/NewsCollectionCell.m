@@ -11,7 +11,11 @@
 @implementation NewsCollectionCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
+    
+    self.contentView.frame = self.bounds;
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [AppManager roundMyView:self borderRadius:3 borderWidth:0 color:nil];
 }
 
 @end

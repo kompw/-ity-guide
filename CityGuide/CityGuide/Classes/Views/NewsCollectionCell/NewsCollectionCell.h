@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsCollectionCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *describe;
+@property (weak, nonatomic) IBOutlet UILabel *time;
 
 @end

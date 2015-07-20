@@ -7,8 +7,12 @@
 //
 
 #import "NewsDetailController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface NewsDetailController ()
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UITextView *text;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
 
@@ -16,12 +20,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
+    self.title = @"Новость";
+    self.navigationItem.rightBarButtonItem = [AppManager plusButton:self andSelector:@selector(openSendController)];
+    
+    if (self.souceDictionary != nil) {
+        self.name.text = self.souceDictionary[title_key];
+        [self.image sd_setImageWithURL:self.souceDictionary[image_key]];
+        self.text.text = self.souceDictionary[details_key];
+    }}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)openSendController{
+    [self.navigationController pushViewController:[SendMessageViewController new] animated:YES];
 }
 
 /*

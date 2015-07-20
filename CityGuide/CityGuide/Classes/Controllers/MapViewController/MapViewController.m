@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ActionSheetPicker.h"
+#import "FilterMapController.h"
 
 static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
 static NSInteger hightDownCategoriesButton = 38;

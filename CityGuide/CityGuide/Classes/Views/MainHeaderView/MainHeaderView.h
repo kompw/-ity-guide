@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MainHeaderView : UIView
-
+@property (strong, nonatomic) UINavigationController *navigationController;
 @end

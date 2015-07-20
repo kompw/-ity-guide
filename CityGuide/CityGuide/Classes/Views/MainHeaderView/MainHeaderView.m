@@ -7,6 +7,7 @@
 //
 
 #import "MainHeaderView.h"
+#import "InfoController.h"
 
 @implementation MainHeaderView
 
@@ -17,5 +18,8 @@
     // Drawing code
 }
 */
+- (IBAction)openInfo:(id)sender {
+    [self.navigationController pushViewController:[InfoController new] animated:YES];
+}
 
 @end

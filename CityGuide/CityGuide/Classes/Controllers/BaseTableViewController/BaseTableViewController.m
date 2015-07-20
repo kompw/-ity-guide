@@ -13,6 +13,8 @@
 #import "SendMessageViewController.h"
 #import "DishesViewController.h"
 #import "PosterViewController.h"
+#import "NewsDetailController.h"
+#import "NewsController.h"
 
 #import "SendView.h"
 #import "MainMenuCell.h"
@@ -37,7 +39,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 
 
 @interface BaseTableViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerConst;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @end
@@ -63,8 +64,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             
             MainHeaderView *mainHeaderView = [[[NSBundle mainBundle] loadNibNamed:[MainHeaderView description] owner:self options:nil] firstObject];
             self.tableView.sectionHeaderHeight = mainHeaderView.frame.size.height;
-            
-            self.headerConst.constant = 0;
         }
             break;
         case Shares:{
@@ -122,22 +121,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             }];
         }
             break;
-        case News:{
-            self.title = @"Новости";
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
-            self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
-            
-            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
-            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
-            
-            
-            [ServerManager newsData:^(NSArray *array) {
-                dataSource = array;
-                [self.tableView reloadData];
-            }];
-        }
-            break;
+       
         case Taxi:{
             self.title = @"Такси";
             UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
@@ -312,7 +296,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              cell = [self mainMenuCell:indexPath andModel:model];
          }
              break;
-         case News:
          case Shares:{
              cell = [self textWithImageCell:indexPath andTitle:model[title_key] andImageUrl:model[image_key]];
          }
@@ -355,7 +338,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             [self actionMainMenu:indexPath.row];
         }
             break;
-        case News:
+            
         case Shares:{
             SharesDetailController *baseDetailViewController = [SharesDetailController alloc];
             baseDetailViewController.souceDictionary = model;
@@ -533,10 +516,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case MapTab:
             [self.navigationController pushViewController:[MapViewController new] animated:YES];
             return;
-            break;
         case NewsTab:
-            baseViewController.controllerType = News;
-            break;
+            [self.navigationController pushViewController:[NewsController new] animated:YES];
+            return;
         case TaxiTab:
             baseViewController.controllerType = Taxi;
             break;
