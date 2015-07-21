@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoController">
@@ -13,7 +13,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjT-0a-arQ">
+                    <rect key="frame" x="8" y="61" width="584" height="539"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Мое домодедово” " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtc-If-9Eo">
+                            <rect key="frame" x="8" y="15" width="188" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="188" id="qD2-Or-Pj7"/>
+                                <constraint firstAttribute="height" constant="21" id="whe-By-Rvl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-jP-gDE">
+                            <rect key="frame" x="8" y="44" width="552" height="495"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <string key="text">Интерактивное городское приложение. Все права защищены. По вопросам функционирования и размещения в приложении просьба связываться с нами черезформу обратной связи или по e-mail: andrei_kutovoi@mail.ru+7 (915) 012-35-06Автор идеи и разработчик - Кутовой АндрейПрограммист под Android - Гилевич АртемПрограммист под IOS - Тарас СорокинДизайн - Александрина МирошниченкоПомощь в реализации - Кутовая Екатерина</string>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="версия 1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-SU-818">
+                            <rect key="frame" x="483" y="15" width="77" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="6hJ-kk-NDl"/>
+                                <constraint firstAttribute="width" constant="77" id="Mau-b5-8ZI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="6hL-jP-gDE" secondAttribute="trailing" constant="24" id="3bX-gQ-ddQ"/>
+                        <constraint firstItem="Rtc-If-9Eo" firstAttribute="top" secondItem="cjT-0a-arQ" secondAttribute="top" constant="15" id="4Ot-Be-9gS"/>
+                        <constraint firstItem="6hL-jP-gDE" firstAttribute="leading" secondItem="cjT-0a-arQ" secondAttribute="leading" constant="8" id="Jfd-IX-EpY"/>
+                        <constraint firstAttribute="trailing" secondItem="ICW-SU-818" secondAttribute="trailing" constant="24" id="KCf-7F-Qiu"/>
+                        <constraint firstAttribute="bottom" secondItem="6hL-jP-gDE" secondAttribute="bottom" id="RCB-jY-yPV"/>
+                        <constraint firstItem="ICW-SU-818" firstAttribute="top" secondItem="cjT-0a-arQ" secondAttribute="top" constant="15" id="fxk-hj-M8c"/>
+                        <constraint firstItem="Rtc-If-9Eo" firstAttribute="leading" secondItem="cjT-0a-arQ" secondAttribute="leading" constant="8" id="g5g-g7-uEe"/>
+                        <constraint firstItem="6hL-jP-gDE" firstAttribute="top" secondItem="ICW-SU-818" secondAttribute="bottom" constant="8" id="tqQ-Sz-Wkr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94509803920000002" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cjT-0a-arQ" secondAttribute="trailing" constant="8" id="1kg-Zj-ecE"/>
+                <constraint firstItem="cjT-0a-arQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="Toj-aj-xfe"/>
+                <constraint firstAttribute="bottom" secondItem="cjT-0a-arQ" secondAttribute="bottom" id="hXG-D7-Cqb"/>
+                <constraint firstItem="cjT-0a-arQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lfu-sH-uUV"/>
+            </constraints>
         </view>
     </objects>
 </document>
