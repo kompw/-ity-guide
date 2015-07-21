@@ -9,14 +9,14 @@
 #import "BasketViewController.h"
 #import "DishesModel.h"
 #import "DishesCell.h"
+#import "OrderController.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <MessageUI/MessageUI.h>
 #import "WToast.h"
 
 static NSString *reuseIdentifier = @"cell";
 
-@interface BasketViewController () <UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate,DishesCellDelegate>
+@interface BasketViewController () <UITableViewDataSource,UITableViewDelegate,DishesCellDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIButton *phoneButton;
@@ -134,21 +134,18 @@ static NSString *reuseIdentifier = @"cell";
             [messageBody appendFormat:@"%@  %ld шт \n",model.name,(long)model.count];
         }
     }
-
-    NSArray *toRecipents = [NSArray arrayWithObject:self.restarauntModelMain[email_key]];
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:@"Заказ"];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:toRecipents];
     
-    [self presentViewController:mc animated:YES completion:NULL];
+    if (messageBody.length == 0) {
+        return;
+    }
+
+    OrderController *orderController = [OrderController alloc];
+    orderController.messageBody = messageBody;
+    orderController.email = self.restarauntModelMain[email_key];
+    [self.navigationController pushViewController:orderController animated:YES];
 }
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
+
 
 #pragma mark - Table view data source
 

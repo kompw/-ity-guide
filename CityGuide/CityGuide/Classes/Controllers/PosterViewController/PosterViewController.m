@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Объявление";
+    self.navigationItem.rightBarButtonItem = [AppManager plusButton:self andSelector:@selector(openSendController)];
+    
     self.name.text = self.souceDictionary[name_key];
     [self.image sd_setImageWithURL:self.souceDictionary[image_key]];
     self.text.text = self.souceDictionary[description_key];
@@ -42,6 +44,10 @@
 - (IBAction)call:(id)sender {
     NSString *phoneNumber = [@"tel://" stringByAppendingString:self.souceDictionary[phone_key]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+}
+
+-(void)openSendController{
+    [self.navigationController pushViewController:[SendMessageViewController new] animated:YES];
 }
 
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class FilterMapController;
+@protocol FilterMapControllerDelegate <NSObject>
+-(void)showMarkersWithData:(NSArray*)data;
+@end
 
 @interface FilterMapController : UIViewController
+@property (nonatomic,strong) id <FilterMapControllerDelegate> delegate;
 
++ (FilterMapController *)sharedManager;
 @end

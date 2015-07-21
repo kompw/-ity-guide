@@ -52,6 +52,16 @@
 		762687EA1B5D12CE008B55E9 /* NewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762687E81B5D12CE008B55E9 /* NewsController.xib */; };
 		762687EF1B5D15EF008B55E9 /* NewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 762687ED1B5D15EF008B55E9 /* NewsCollectionCell.m */; };
 		762687F01B5D15EF008B55E9 /* NewsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762687EE1B5D15EF008B55E9 /* NewsCollectionCell.xib */; };
+		765D87551B5E4C1C00BF0130 /* Poster3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87531B5E4C1C00BF0130 /* Poster3Cell.m */; };
+		765D87561B5E4C1C00BF0130 /* Poster3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765D87541B5E4C1C00BF0130 /* Poster3Cell.xib */; };
+		765D875B1B5E628300BF0130 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87591B5E628300BF0130 /* OrderController.m */; };
+		765D875C1B5E628300BF0130 /* OrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765D875A1B5E628300BF0130 /* OrderController.xib */; };
+		765D87611B5E6F7800BF0130 /* FilterMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D875F1B5E6F7800BF0130 /* FilterMapCell.m */; };
+		765D87621B5E6F7800BF0130 /* FilterMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765D87601B5E6F7800BF0130 /* FilterMapCell.xib */; };
+		765D87661B5E712D00BF0130 /* FilterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87651B5E712D00BF0130 /* FilterMapView.m */; };
+		765D87681B5E714100BF0130 /* FilterMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765D87671B5E714100BF0130 /* FilterMapView.xib */; };
+		765D87721B5E7E2D00BF0130 /* CategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87711B5E7E2D00BF0130 /* CategoriesModel.m */; };
+		765D87761B5E910200BF0130 /* DownCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87751B5E910200BF0130 /* DownCategoriesModel.m */; };
 		7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676EBD11B3C162D00CD967D /* Main.storyboard */; };
 		769287531B3D9962003E6491 /* DishesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 769287521B3D9962003E6491 /* DishesModel.m */; };
 		769287581B3DA2B7003E6491 /* DishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 769287561B3DA2B7003E6491 /* DishesCell.m */; };
@@ -143,6 +153,22 @@
 		762687EC1B5D15EF008B55E9 /* NewsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCollectionCell.h; sourceTree = "<group>"; };
 		762687ED1B5D15EF008B55E9 /* NewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionCell.m; sourceTree = "<group>"; };
 		762687EE1B5D15EF008B55E9 /* NewsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionCell.xib; sourceTree = "<group>"; };
+		765D87521B5E4C1C00BF0130 /* Poster3Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poster3Cell.h; sourceTree = "<group>"; };
+		765D87531B5E4C1C00BF0130 /* Poster3Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poster3Cell.m; sourceTree = "<group>"; };
+		765D87541B5E4C1C00BF0130 /* Poster3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Poster3Cell.xib; sourceTree = "<group>"; };
+		765D87581B5E628300BF0130 /* OrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderController.h; sourceTree = "<group>"; };
+		765D87591B5E628300BF0130 /* OrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderController.m; sourceTree = "<group>"; };
+		765D875A1B5E628300BF0130 /* OrderController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderController.xib; sourceTree = "<group>"; };
+		765D875E1B5E6F7800BF0130 /* FilterMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterMapCell.h; sourceTree = "<group>"; };
+		765D875F1B5E6F7800BF0130 /* FilterMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterMapCell.m; sourceTree = "<group>"; };
+		765D87601B5E6F7800BF0130 /* FilterMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterMapCell.xib; sourceTree = "<group>"; };
+		765D87641B5E712D00BF0130 /* FilterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterMapView.h; sourceTree = "<group>"; };
+		765D87651B5E712D00BF0130 /* FilterMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterMapView.m; sourceTree = "<group>"; };
+		765D87671B5E714100BF0130 /* FilterMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterMapView.xib; sourceTree = "<group>"; };
+		765D87701B5E7E2D00BF0130 /* CategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesModel.h; sourceTree = "<group>"; };
+		765D87711B5E7E2D00BF0130 /* CategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesModel.m; sourceTree = "<group>"; };
+		765D87741B5E910200BF0130 /* DownCategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownCategoriesModel.h; sourceTree = "<group>"; };
+		765D87751B5E910200BF0130 /* DownCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownCategoriesModel.m; sourceTree = "<group>"; };
 		7676EBD11B3C162D00CD967D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		769287511B3D9962003E6491 /* DishesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishesModel.h; sourceTree = "<group>"; };
 		769287521B3D9962003E6491 /* DishesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishesModel.m; sourceTree = "<group>"; };
@@ -305,6 +331,8 @@
 		4E555D7E1B398DE7009253DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				765D87731B5E90F200BF0130 /* DownCategoriesModel */,
+				765D876B1B5E7DDD00BF0130 /* CategoriesModel */,
 				769287501B3D9953003E6491 /* DishesModel */,
 				4E3567211B39CD7A00ADBA7F /* AppManager */,
 				4E555EDD1B39BF04009253DC /* ServerManager */,
@@ -315,6 +343,9 @@
 		4E555D7F1B398DE7009253DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				765D87631B5E711600BF0130 /* FilterMapView */,
+				765D875D1B5E6F6900BF0130 /* FilterMapCell */,
+				765D87511B5E4C0C00BF0130 /* Poster3Cell */,
 				4E47A7201B5D891300135168 /* TaxiCell */,
 				762687EB1B5D15DF008B55E9 /* NewsCollectionCell */,
 				762687921B5CFEFD008B55E9 /* MainHeaderView */,
@@ -358,6 +389,7 @@
 		7626879E1B5D09FB008B55E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				765D87571B5E627500BF0130 /* OrderController */,
 				762687E51B5D127C008B55E9 /* NewsController */,
 				762687DF1B5D0C28008B55E9 /* NewsDetailController */,
 				762687D51B5D0A2C008B55E9 /* FilterMapController */,
@@ -505,6 +537,64 @@
 			path = NewsCollectionCell;
 			sourceTree = "<group>";
 		};
+		765D87511B5E4C0C00BF0130 /* Poster3Cell */ = {
+			isa = PBXGroup;
+			children = (
+				765D87521B5E4C1C00BF0130 /* Poster3Cell.h */,
+				765D87531B5E4C1C00BF0130 /* Poster3Cell.m */,
+				765D87541B5E4C1C00BF0130 /* Poster3Cell.xib */,
+			);
+			path = Poster3Cell;
+			sourceTree = "<group>";
+		};
+		765D87571B5E627500BF0130 /* OrderController */ = {
+			isa = PBXGroup;
+			children = (
+				765D87581B5E628300BF0130 /* OrderController.h */,
+				765D87591B5E628300BF0130 /* OrderController.m */,
+				765D875A1B5E628300BF0130 /* OrderController.xib */,
+			);
+			path = OrderController;
+			sourceTree = "<group>";
+		};
+		765D875D1B5E6F6900BF0130 /* FilterMapCell */ = {
+			isa = PBXGroup;
+			children = (
+				765D875E1B5E6F7800BF0130 /* FilterMapCell.h */,
+				765D875F1B5E6F7800BF0130 /* FilterMapCell.m */,
+				765D87601B5E6F7800BF0130 /* FilterMapCell.xib */,
+			);
+			path = FilterMapCell;
+			sourceTree = "<group>";
+		};
+		765D87631B5E711600BF0130 /* FilterMapView */ = {
+			isa = PBXGroup;
+			children = (
+				765D87641B5E712D00BF0130 /* FilterMapView.h */,
+				765D87651B5E712D00BF0130 /* FilterMapView.m */,
+				765D87671B5E714100BF0130 /* FilterMapView.xib */,
+			);
+			path = FilterMapView;
+			sourceTree = "<group>";
+		};
+		765D876B1B5E7DDD00BF0130 /* CategoriesModel */ = {
+			isa = PBXGroup;
+			children = (
+				765D87701B5E7E2D00BF0130 /* CategoriesModel.h */,
+				765D87711B5E7E2D00BF0130 /* CategoriesModel.m */,
+			);
+			path = CategoriesModel;
+			sourceTree = "<group>";
+		};
+		765D87731B5E90F200BF0130 /* DownCategoriesModel */ = {
+			isa = PBXGroup;
+			children = (
+				765D87741B5E910200BF0130 /* DownCategoriesModel.h */,
+				765D87751B5E910200BF0130 /* DownCategoriesModel.m */,
+			);
+			path = DownCategoriesModel;
+			sourceTree = "<group>";
+		};
 		769287501B3D9953003E6491 /* DishesModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,12 +706,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765D87621B5E6F7800BF0130 /* FilterMapCell.xib in Resources */,
 				4E47A7251B5D892600135168 /* TaxiCell.xib in Resources */,
 				4E3567311B39F31500ADBA7F /* TextCell.xib in Resources */,
 				4E35672C1B39D8E300ADBA7F /* MainMenuCell.xib in Resources */,
 				762687D21B5D09FB008B55E9 /* PosterViewController.xib in Resources */,
 				762687CC1B5D09FB008B55E9 /* DishesViewController.xib in Resources */,
 				762687D01B5D09FB008B55E9 /* MapViewController.xib in Resources */,
+				765D87681B5E714100BF0130 /* FilterMapView.xib in Resources */,
 				4E35673C1B3A09ED00ADBA7F /* SendView.xib in Resources */,
 				7676EBD21B3C162D00CD967D /* Main.storyboard in Resources */,
 				762687CE1B5D09FB008B55E9 /* InfoController.xib in Resources */,
@@ -630,8 +722,10 @@
 				762687E41B5D0C3B008B55E9 /* NewsDetailController.xib in Resources */,
 				762687EA1B5D12CE008B55E9 /* NewsController.xib in Resources */,
 				762687DA1B5D0A5C008B55E9 /* FilterMapController.xib in Resources */,
+				765D875C1B5E628300BF0130 /* OrderController.xib in Resources */,
 				762687971B5CFF24008B55E9 /* MainHeaderView.xib in Resources */,
 				762687CA1B5D09FB008B55E9 /* CompanyViewController.xib in Resources */,
+				765D87561B5E4C1C00BF0130 /* Poster3Cell.xib in Resources */,
 				762687C41B5D09FB008B55E9 /* SharesDetailController.xib in Resources */,
 				762687D41B5D09FB008B55E9 /* SendMessageViewController.xib in Resources */,
 				4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */,
@@ -695,6 +789,7 @@
 				762687C91B5D09FB008B55E9 /* CompanyViewController.m in Sources */,
 				4E555EE01B39BF17009253DC /* ServerManager.m in Sources */,
 				762687CF1B5D09FB008B55E9 /* MapViewController.m in Sources */,
+				765D87611B5E6F7800BF0130 /* FilterMapCell.m in Sources */,
 				762687D31B5D09FB008B55E9 /* SendMessageViewController.m in Sources */,
 				4E3C23341B395CCE009BBB34 /* AppDelegate.m in Sources */,
 				762687EF1B5D15EF008B55E9 /* NewsCollectionCell.m in Sources */,
@@ -702,16 +797,21 @@
 				4E35673A1B3A09AE00ADBA7F /* SendView.m in Sources */,
 				4E3567351B39F32700ADBA7F /* TextWithImageCell.m in Sources */,
 				4E47A7241B5D892600135168 /* TaxiCell.m in Sources */,
+				765D87721B5E7E2D00BF0130 /* CategoriesModel.m in Sources */,
 				4E3567301B39F31500ADBA7F /* TextCell.m in Sources */,
 				762687CD1B5D09FB008B55E9 /* InfoController.m in Sources */,
 				762687D91B5D0A5C008B55E9 /* FilterMapController.m in Sources */,
+				765D87761B5E910200BF0130 /* DownCategoriesModel.m in Sources */,
 				769287531B3D9962003E6491 /* DishesModel.m in Sources */,
 				4E3C23311B395CCE009BBB34 /* main.m in Sources */,
 				762687C71B5D09FB008B55E9 /* BasketViewController.m in Sources */,
 				762687C51B5D09FB008B55E9 /* BaseTableViewController.m in Sources */,
+				765D875B1B5E628300BF0130 /* OrderController.m in Sources */,
+				765D87551B5E4C1C00BF0130 /* Poster3Cell.m in Sources */,
 				762687C31B5D09FB008B55E9 /* SharesDetailController.m in Sources */,
 				762687D11B5D09FB008B55E9 /* PosterViewController.m in Sources */,
 				4E35672B1B39D8E300ADBA7F /* MainMenuCell.m in Sources */,
+				765D87661B5E712D00BF0130 /* FilterMapView.m in Sources */,
 				4E3567241B39CD8D00ADBA7F /* AppManager.m in Sources */,
 				762687951B5CFF15008B55E9 /* MainHeaderView.m in Sources */,
 			);

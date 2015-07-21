@@ -22,6 +22,7 @@
 #import "TextWithImageCell.h"
 #import "MainHeaderView.h"
 #import "TaxiCell.h"
+#import "Poster3Cell.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -190,9 +191,12 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
         case Poster1:{
             self.title = @"Объявления";
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell  description] owner:self options:nil] firstObject];
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
             self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            
+            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
+            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
    
             [ServerManager poster1Data:^(NSArray *array) {
                 dataSource = array;
@@ -212,12 +216,11 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         }
             break;
         case Poster3:{
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell  description] owner:self options:nil] firstObject];
-            self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
-            
-            SendView *sendView = [[[NSBundle mainBundle] loadNibNamed:[SendView description] owner:self options:nil] firstObject];
-            self.tableView.sectionHeaderHeight = sendView.frame.size.height;
+            //UIView * v = [[[NSBundle mainBundle] loadNibNamed:[Poster3Cell  description] owner:self options:nil] firstObject];
+            //self.tableView.rowHeight = v.frame.size.height;
+            [self.tableView registerNib:[UINib nibWithNibName:[Poster3Cell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            self.tableView.estimatedRowHeight = 86;
+            self.tableView.rowHeight = UITableViewAutomaticDimension;
             
             [ServerManager poster3Data:self.numberId.description completion:^(NSArray *array) {
                 dataSource = array;
@@ -250,7 +253,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case Directory2:
         case Directory3:
         case Poster2:
-        case Poster1:
+        case Poster3:
             return nil;
             break;
             
@@ -278,7 +281,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         case Delivery3:
             [sendView.sendButton setTitle:@"Разместить ресторан" forState: UIControlStateNormal];
             break;
-        case Poster3:
+        case Poster1:
             [sendView.sendButton setTitle:@"Разместить объявление" forState: UIControlStateNormal];
             break;
         default:
@@ -297,12 +300,12 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              cell = [self mainMenuCell:indexPath andModel:model];
          }
              break;
+             
          case Shares:{
              cell = [self textWithImageCell:indexPath andTitle:model[title_key] andImageUrl:model[image_key]];
          }
              break;
-         case Poster2:
-         case Poster1:
+             
          case Delivery2:
              cell = [self textCell:indexPath andModel:model];
              break;
@@ -313,24 +316,39 @@ typedef NS_ENUM(NSInteger, mainMenu) {
                  textWithImageCell = [[[NSBundle mainBundle] loadNibNamed:[TaxiCell description] owner:self options:nil] firstObject];
              }
              [textWithImageCell setDataWithDictionary:model];
+             cell = textWithImageCell;
          }
              break;
              
-         case Poster3:
+         case Poster3:{
+             Poster3Cell* textWithImageCell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+             if (textWithImageCell == nil) {
+                 textWithImageCell = [[[NSBundle mainBundle] loadNibNamed:[Poster3Cell description] owner:self options:nil] firstObject];
+             }
+             [textWithImageCell setDataWithDictionary:model];
+             cell = textWithImageCell;
+         }
+             break;
+             
          case Delivery3:
          case Delivery1:
          case Directory3:{
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
          }
              break;
+             
+        case Poster1:
         case Directory1:
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
              cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
              break;
+             
+        case Poster2:
         case Directory2:
              cell = [self textCell:indexPath andModel:model];
              cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
              break;
+             
          default:
              break;
      }

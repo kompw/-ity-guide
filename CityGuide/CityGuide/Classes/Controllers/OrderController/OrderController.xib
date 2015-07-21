@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderController">
+            <connections>
+                <outlet property="adress" destination="0p8-co-WFn" id="QIG-Hh-ffc"/>
+                <outlet property="name" destination="EDt-0h-xey" id="WaN-n6-2eB"/>
+                <outlet property="phone" destination="ltQ-Aw-S2N" id="c0H-QF-XCV"/>
+                <outlet property="view" destination="2Bf-gV-WzC" id="hmV-4N-cGp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2Bf-gV-WzC">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2am-6k-lCI">
+                    <rect key="frame" x="86" y="70" width="428" height="171"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ваше имя" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDt-0h-xey">
+                            <rect key="frame" x="8" y="8" width="412" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0j7-Cs-i0w"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="yf4-IO-zKH"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ваш телефон" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ltQ-Aw-S2N">
+                            <rect key="frame" x="8" y="46" width="412" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="v9d-xW-GKI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="6gs-Jq-bUY"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Адрес доставки" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0p8-co-WFn">
+                            <rect key="frame" x="8" y="84" width="412" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="hbO-Pc-myt"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="up9-j8-CPV">
+                            <rect key="frame" x="8" y="132" width="412" height="30"/>
+                            <color key="backgroundColor" red="0.3058823645" green="0.56862747670000002" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
+                            <state key="normal" title="Заказать">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="sendMail:" destination="-1" eventType="touchUpInside" id="LLE-54-Mph"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901967050000002" green="0.95029968340000004" blue="0.92001496810000005" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstItem="ltQ-Aw-S2N" firstAttribute="top" secondItem="EDt-0h-xey" secondAttribute="bottom" constant="8" id="0Qw-VZ-eq0"/>
+                        <constraint firstAttribute="bottom" secondItem="up9-j8-CPV" secondAttribute="bottom" constant="9" id="1nS-T8-xDV"/>
+                        <constraint firstItem="ltQ-Aw-S2N" firstAttribute="leading" secondItem="2am-6k-lCI" secondAttribute="leading" constant="8" id="4Ig-il-zZH"/>
+                        <constraint firstAttribute="trailing" secondItem="EDt-0h-xey" secondAttribute="trailing" constant="8" id="66R-JY-Q5K"/>
+                        <constraint firstItem="EDt-0h-xey" firstAttribute="leading" secondItem="2am-6k-lCI" secondAttribute="leading" constant="8" id="AK4-yk-cVN"/>
+                        <constraint firstItem="up9-j8-CPV" firstAttribute="top" secondItem="0p8-co-WFn" secondAttribute="bottom" constant="18" id="QBi-vA-Mdg"/>
+                        <constraint firstAttribute="height" constant="171" id="RtX-ae-hbF"/>
+                        <constraint firstAttribute="trailing" secondItem="0p8-co-WFn" secondAttribute="trailing" constant="8" id="TnA-Qt-9E6"/>
+                        <constraint firstItem="EDt-0h-xey" firstAttribute="top" secondItem="2am-6k-lCI" secondAttribute="top" constant="8" id="UtA-Nz-YQS"/>
+                        <constraint firstAttribute="trailing" secondItem="ltQ-Aw-S2N" secondAttribute="trailing" constant="8" id="cDb-9B-Gwl"/>
+                        <constraint firstItem="0p8-co-WFn" firstAttribute="top" secondItem="ltQ-Aw-S2N" secondAttribute="bottom" constant="8" id="e3K-gc-J8m"/>
+                        <constraint firstItem="up9-j8-CPV" firstAttribute="leading" secondItem="2am-6k-lCI" secondAttribute="leading" constant="8" id="g6f-VY-upc"/>
+                        <constraint firstItem="0p8-co-WFn" firstAttribute="leading" secondItem="2am-6k-lCI" secondAttribute="leading" constant="8" id="lIr-yP-Mzb"/>
+                        <constraint firstAttribute="trailing" secondItem="up9-j8-CPV" secondAttribute="trailing" constant="8" id="sCE-1W-MsJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94509803920000002" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="2am-6k-lCI" firstAttribute="leading" secondItem="2Bf-gV-WzC" secondAttribute="leading" constant="86" id="EUp-ME-MVB">
+                    <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="2am-6k-lCI" secondAttribute="trailing" constant="86" id="LWu-Mh-SGg">
+                    <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                </constraint>
+                <constraint firstAttribute="centerY" secondItem="2am-6k-lCI" secondAttribute="centerY" constant="144.5" id="iD7-ML-gxM"/>
+                <constraint firstAttribute="centerX" secondItem="2am-6k-lCI" secondAttribute="centerX" id="kzZ-yq-8xP"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

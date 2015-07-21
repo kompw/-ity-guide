@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Сообщение";
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKey)];
+    [self.view addGestureRecognizer:singleFingerTap];
 }
 
 -(BOOL)cheсkLine{
@@ -35,6 +37,24 @@
     }
     
     return YES;
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"])
+        [textView resignFirstResponder];
+    return YES;
+}
+
+-(void)hideKey{
+    [self.name resignFirstResponder];
+    [self.phone resignFirstResponder];
+    [self.textMain resignFirstResponder];
 }
 
 - (IBAction)send:(id)sender {

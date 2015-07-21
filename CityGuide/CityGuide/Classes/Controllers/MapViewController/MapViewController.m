@@ -7,74 +7,46 @@
 //
 
 #import "MapViewController.h"
-#import "ActionSheetPicker.h"
 #import "FilterMapController.h"
 
 static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
-static NSInteger hightDownCategoriesButton = 38;
-@interface MapViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *categoriesButton;
-@property (weak, nonatomic) IBOutlet UIButton *downCategoriesButton;
+
+@interface MapViewController ()<FilterMapControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *boxView;
 @property (nonatomic, strong) GMSMapView *map;
-
-
-@property (nonatomic, strong) NSArray *categories;
-@property (nonatomic, strong) NSArray *downCategories;
-
-@property NSInteger selectedIndexCategories;
-@property NSInteger selectedIndexDownCategories;
-
 @end
 
 @implementation MapViewController
-@synthesize downCategoriesButton;
-@synthesize categoriesButton;
-@synthesize selectedIndexCategories;
-@synthesize selectedIndexDownCategories;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Карта";
     [GMSServices provideAPIKey:kAPIKey];
+    
+    UIButton *filterB = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [filterB setImage:[UIImage imageNamed:@"filtr_x.png"] forState:UIControlStateNormal];
+    [filterB addTarget:self action:@selector(openFilter) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:filterB];
 
     GMSCameraPosition *camera;
     if (self.companyName) {
-        downCategoriesButton.translatesAutoresizingMaskIntoConstraints = YES;
-        downCategoriesButton.frame = CGRectMake(downCategoriesButton.frame.origin.x, - 2 * downCategoriesButton.frame.size.height, downCategoriesButton.frame.size.width, downCategoriesButton.frame.size.height);
-        
-        categoriesButton.translatesAutoresizingMaskIntoConstraints = YES;
-        categoriesButton.frame = CGRectMake(categoriesButton.frame.origin.x, - categoriesButton.frame.size.height, categoriesButton.frame.size.width, categoriesButton.frame.size.height);
-        
         camera = [GMSCameraPosition cameraWithLatitude:self.coordinates.latitude  longitude:self.coordinates.longitude zoom:10];
     }else{
-        downCategoriesButton.translatesAutoresizingMaskIntoConstraints = YES;
-        downCategoriesButton.frame = CGRectMake(downCategoriesButton.frame.origin.x, downCategoriesButton.frame.origin.y - hightDownCategoriesButton, downCategoriesButton.frame.size.width, downCategoriesButton.frame.size.height);
-        
         camera = [GMSCameraPosition cameraWithLatitude:55.436504  longitude:37.763629 zoom:10];
     }
-    
     
     self.map = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.boxView.frame.size.width, self.boxView.frame.size.height) camera:camera];
     [self.boxView addSubview:self.map];
     
     //set marker
     if (self.companyName) {
-        [self  createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates];
+        [self createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates];
     }else{
         [ServerManager mapForAllData:^(NSArray *array) {
              [self workWithServerArray:array];
         }];
     }
-}
-
--(void)viewDidLayoutSubviews{
-    self.map.frame = CGRectMake(0, 0, self.boxView.frame.size.width, self.boxView.frame.size.height);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)workWithServerArray:(NSArray*)serverArray{
@@ -95,6 +67,22 @@ static NSInteger hightDownCategoriesButton = 38;
     marker.map = (GMSMapView*)self.map;
 }
 
+-(void)openFilter{
+    FilterMapController *filterMapController = [FilterMapController sharedManager];
+    filterMapController.delegate = self;
+    [self.navigationController pushViewController:filterMapController animated:YES];
+}
+
+#pragma FilterMapControllerDelegate
+
+-(void)showMarkersWithData:(NSArray*)data{
+    //[self.map clear];
+    //[self workWithServerArray:data];
+}
+
+
+
+/*
 - (IBAction)selectCategories:(id)sender {
     if (self.categories) {
         [self showCategories];
@@ -174,7 +162,7 @@ static NSInteger hightDownCategoriesButton = 38;
     [picker setCancelButton:item2];
     [picker showActionSheetPicker];
 }
-
+*/
 
 
 @end
