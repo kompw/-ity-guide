@@ -37,6 +37,7 @@ static NSString *date_key = @"date";
 +(void)delivery2Data:(NSString*)restaraunt_id completion:(void (^)(NSArray* array))completion;
 +(void)delivery3Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
 +(void)mapForAllData:(void (^)(NSArray* array))completion;
++(void)mapForSubcategory:(NSString*)data completion:(void (^)(NSArray* array))completion;
 +(void)poster1Data:(void (^)(NSArray* array))completion;
 +(void)poster2Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
 +(void)poster3Data:(NSString*)subcategory_id completion:(void (^)(NSArray* array))completion;

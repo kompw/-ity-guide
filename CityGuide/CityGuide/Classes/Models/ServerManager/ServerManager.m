@@ -68,7 +68,12 @@ static NSString *urlStr= @"http://citymy.ru/api/";
 }
 
 +(void)mapForAllData:(void (^)(NSArray* array))completion{
-     NSString *url = [urlStr stringByAppendingString:@"map/get_map.php"];
+    NSString *url = [urlStr stringByAppendingString:@"map/get_map.php"];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
++(void)mapForSubcategory:(NSString*)data completion:(void (^)(NSArray* array))completion{
+    NSString *url = [NSString stringWithFormat:@"%@%@%@",urlStr,@"map/get_map.php?subcategory_id=",data];
     [self baseGetReqestWithUrk:url completion:completion];
 }
 

@@ -75,9 +75,11 @@ static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
 
 #pragma FilterMapControllerDelegate
 
--(void)showMarkersWithData:(NSArray*)data{
-    //[self.map clear];
-    //[self workWithServerArray:data];
+-(void)showMarkersWithData:(NSString*)data{
+    [self.map clear];
+    [ServerManager mapForSubcategory:data completion:^(NSArray *array) {
+        [self workWithServerArray:array];
+    }];
 }
 
 

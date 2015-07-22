@@ -61,7 +61,7 @@ static NSString *CellIdentifier = @"Cell";
         for (NSDictionary *dic in array) {
             CategoriesModel *categories = [CategoriesModel new];
             categories.name = dic[name_key];
-            categories.catId = dic[id_key];
+            categories.catId = [dic[id_key] description];
             [self.dataSouce addObject:categories];
             [self.tableView reloadData];
         }
@@ -70,7 +70,22 @@ static NSString *CellIdentifier = @"Cell";
 
 -(void)showMap{
     if (self.delegate && [self.delegate respondsToSelector:@selector(showMarkersWithData:)]) {
-        //self.delegate
+        NSMutableString *lineRequest = [NSMutableString new];
+        
+        for (CategoriesModel *categories in self.dataSouce) {
+            for (DownCategoriesModel *downCategoriesModel in categories.downCategories) {
+                if (downCategoriesModel.isSelect) {
+                    [lineRequest appendFormat:@"%@,",downCategoriesModel.downCategoriesId];
+                }
+            }
+        }
+        
+        if (lineRequest.length != 0) {
+            [self.delegate showMarkersWithData:[lineRequest substringToIndex:[lineRequest length]-1]];
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
 }
 
@@ -83,7 +98,7 @@ static NSString *CellIdentifier = @"Cell";
         [ServerManager directory2Data:categoriesModel.catId forMap:YES completion:^(NSArray *array) {
             for (NSDictionary *dic in array) {
                 DownCategoriesModel *downCategoriesModel = [DownCategoriesModel new];
-                downCategoriesModel.downCategoriesId = dic[id_key];
+                downCategoriesModel.downCategoriesId = [dic[id_key] description];
                 downCategoriesModel.name = dic[name_key];
                 [categoriesModel.downCategories addObject:downCategoriesModel];
             }

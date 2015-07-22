@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-9h-cun">
-                    <rect key="frame" x="8" y="0.0" width="584" height="600"/>
+                    <rect key="frame" x="8" y="8" width="584" height="592"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="29g-jL-EJq"/>
@@ -29,7 +29,7 @@
                 <constraint firstAttribute="trailing" secondItem="NNb-9h-cun" secondAttribute="trailing" constant="8" id="FTY-Y0-DzF"/>
                 <constraint firstItem="NNb-9h-cun" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="VbJ-y0-n9i"/>
                 <constraint firstAttribute="bottom" secondItem="NNb-9h-cun" secondAttribute="bottom" id="oLL-fA-JjH"/>
-                <constraint firstItem="NNb-9h-cun" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ug2-GD-ts2"/>
+                <constraint firstItem="NNb-9h-cun" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ug2-GD-ts2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="147" y="26"/>

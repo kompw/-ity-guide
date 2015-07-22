@@ -7,8 +7,11 @@
 //
 
 #import "SendMessageViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface SendMessageViewController ()
+static NSString *URL_MAIL = @"vdvdomodedovo@yandex.ru";
+
+@interface SendMessageViewController ()<MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 @property (weak, nonatomic) IBOutlet UITextView *textMain;
@@ -59,10 +62,22 @@
 
 - (IBAction)send:(id)sender {
     if (self.cheсkLine) {
+        NSString *messageBody = [NSString stringWithFormat:@"Имя: %@\n Телефон: %@\n Сообщение: %@",self.name.text,self.phone.text,self.textMain.text];
         
+        NSArray *toRecipents = [NSArray arrayWithObject:URL_MAIL];
+        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+        mc.mailComposeDelegate = self;
+        [mc setSubject:@"Сообщение"];
+        [mc setMessageBody:messageBody isHTML:NO];
+        [mc setToRecipients:toRecipents];
+        
+        [self presentViewController:mc animated:YES completion:NULL];
     }
 }
 
-
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end

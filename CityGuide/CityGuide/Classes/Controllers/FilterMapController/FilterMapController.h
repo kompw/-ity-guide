@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class FilterMapController;
 @protocol FilterMapControllerDelegate <NSObject>
--(void)showMarkersWithData:(NSArray*)data;
+-(void)showMarkersWithData:(NSString*)data;
 @end
 
 @interface FilterMapController : UIViewController
