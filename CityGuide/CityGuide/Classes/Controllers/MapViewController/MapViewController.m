@@ -12,7 +12,6 @@
 static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
 
 @interface MapViewController ()<FilterMapControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIView *boxView;
 @property (nonatomic, strong) GMSMapView *map;
 @end
 
@@ -36,8 +35,8 @@ static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
         camera = [GMSCameraPosition cameraWithLatitude:55.436504  longitude:37.763629 zoom:10];
     }
     
-    self.map = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.boxView.frame.size.width, self.boxView.frame.size.height) camera:camera];
-    [self.boxView addSubview:self.map];
+    self.map = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+    self.view = self.map;
     
     //set marker
     if (self.companyName) {
