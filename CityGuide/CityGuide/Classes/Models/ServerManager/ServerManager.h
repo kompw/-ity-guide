@@ -23,6 +23,7 @@ static NSString *email_key = @"email";
 static NSString *created_key = @"created";
 static NSString *author_key = @"author";
 static NSString *date_key = @"date";
+static NSString *site_key = @"site";
 
 @interface ServerManager : NSObject
 

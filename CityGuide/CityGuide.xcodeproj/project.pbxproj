@@ -51,6 +51,8 @@
 		762687EA1B5D12CE008B55E9 /* NewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762687E81B5D12CE008B55E9 /* NewsController.xib */; };
 		762687EF1B5D15EF008B55E9 /* NewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 762687ED1B5D15EF008B55E9 /* NewsCollectionCell.m */; };
 		762687F01B5D15EF008B55E9 /* NewsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762687EE1B5D15EF008B55E9 /* NewsCollectionCell.xib */; };
+		762E2EC21BA08AEE006F5A8B /* SendNewPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762E2EC01BA08AEE006F5A8B /* SendNewPosterViewController.m */; };
+		762E2EC31BA08AEE006F5A8B /* SendNewPosterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762E2EC11BA08AEE006F5A8B /* SendNewPosterViewController.xib */; };
 		765D87551B5E4C1C00BF0130 /* Poster3Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87531B5E4C1C00BF0130 /* Poster3Cell.m */; };
 		765D87561B5E4C1C00BF0130 /* Poster3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765D87541B5E4C1C00BF0130 /* Poster3Cell.xib */; };
 		765D875B1B5E628300BF0130 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D87591B5E628300BF0130 /* OrderController.m */; };
@@ -141,6 +143,9 @@
 		762687EC1B5D15EF008B55E9 /* NewsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCollectionCell.h; sourceTree = "<group>"; };
 		762687ED1B5D15EF008B55E9 /* NewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionCell.m; sourceTree = "<group>"; };
 		762687EE1B5D15EF008B55E9 /* NewsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionCell.xib; sourceTree = "<group>"; };
+		762E2EBF1BA08AEE006F5A8B /* SendNewPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendNewPosterViewController.h; sourceTree = "<group>"; };
+		762E2EC01BA08AEE006F5A8B /* SendNewPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendNewPosterViewController.m; sourceTree = "<group>"; };
+		762E2EC11BA08AEE006F5A8B /* SendNewPosterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendNewPosterViewController.xib; sourceTree = "<group>"; };
 		765D87521B5E4C1C00BF0130 /* Poster3Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poster3Cell.h; sourceTree = "<group>"; };
 		765D87531B5E4C1C00BF0130 /* Poster3Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poster3Cell.m; sourceTree = "<group>"; };
 		765D87541B5E4C1C00BF0130 /* Poster3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Poster3Cell.xib; sourceTree = "<group>"; };
@@ -369,18 +374,19 @@
 		7626879E1B5D09FB008B55E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				762687A31B5D09FB008B55E9 /* BaseTableViewController */,
 				765D87571B5E627500BF0130 /* OrderController */,
 				762687E51B5D127C008B55E9 /* NewsController */,
 				762687DF1B5D0C28008B55E9 /* NewsDetailController */,
 				762687D51B5D0A2C008B55E9 /* FilterMapController */,
 				7626879F1B5D09FB008B55E9 /* SharesDetailController */,
-				762687A31B5D09FB008B55E9 /* BaseTableViewController */,
 				762687A71B5D09FB008B55E9 /* BasketViewController */,
 				762687AB1B5D09FB008B55E9 /* CompanyViewController */,
 				762687AF1B5D09FB008B55E9 /* DishesViewController */,
 				762687B31B5D09FB008B55E9 /* InfoController */,
 				762687B71B5D09FB008B55E9 /* MapViewController */,
 				762687BB1B5D09FB008B55E9 /* PosterViewController */,
+				762E2EBE1BA08AD3006F5A8B /* SendNewPosterViewController */,
 				762687BF1B5D09FB008B55E9 /* SendMessageViewController */,
 			);
 			path = Controllers;
@@ -517,6 +523,16 @@
 			path = NewsCollectionCell;
 			sourceTree = "<group>";
 		};
+		762E2EBE1BA08AD3006F5A8B /* SendNewPosterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				762E2EBF1BA08AEE006F5A8B /* SendNewPosterViewController.h */,
+				762E2EC01BA08AEE006F5A8B /* SendNewPosterViewController.m */,
+				762E2EC11BA08AEE006F5A8B /* SendNewPosterViewController.xib */,
+			);
+			path = SendNewPosterViewController;
+			sourceTree = "<group>";
+		};
 		765D87511B5E4C0C00BF0130 /* Poster3Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,7 +651,7 @@
 				TargetAttributes = {
 					4E3C232A1B395CCE009BBB34 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = RJ4M9K7WNS;
+						DevelopmentTeam = K3A45AB52B;
 					};
 				};
 			};
@@ -686,6 +702,7 @@
 				762687D41B5D09FB008B55E9 /* SendMessageViewController.xib in Resources */,
 				4E3C233F1B395CCE009BBB34 /* LaunchScreen.xib in Resources */,
 				4E3C233C1B395CCE009BBB34 /* Images.xcassets in Resources */,
+				762E2EC31BA08AEE006F5A8B /* SendNewPosterViewController.xib in Resources */,
 				4E3567361B39F32700ADBA7F /* TextWithImageCell.xib in Resources */,
 				762687C81B5D09FB008B55E9 /* BasketViewController.xib in Resources */,
 				762687C61B5D09FB008B55E9 /* BaseTableViewController.xib in Resources */,
@@ -740,6 +757,7 @@
 				762687CF1B5D09FB008B55E9 /* MapViewController.m in Sources */,
 				765D87611B5E6F7800BF0130 /* FilterMapCell.m in Sources */,
 				762687D31B5D09FB008B55E9 /* SendMessageViewController.m in Sources */,
+				762E2EC21BA08AEE006F5A8B /* SendNewPosterViewController.m in Sources */,
 				4E3C23341B395CCE009BBB34 /* AppDelegate.m in Sources */,
 				762687EF1B5D15EF008B55E9 /* NewsCollectionCell.m in Sources */,
 				769287581B3DA2B7003E6491 /* DishesCell.m in Sources */,
@@ -875,6 +893,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -891,6 +910,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

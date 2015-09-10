@@ -15,6 +15,7 @@
 #import "PosterViewController.h"
 #import "NewsDetailController.h"
 #import "NewsController.h"
+#import "SendNewPosterViewController.h"
 
 #import "SendView.h"
 #import "MainMenuCell.h"
@@ -30,19 +31,21 @@ static NSString *reuseIdentifier = @"cell";
 
 //all tab in main menu
 typedef NS_ENUM(NSInteger, mainMenu) {
-    SharesTab     = 0,
-    DirectoryTab  = 1,
-    MapTab        = 2,
-    NewsTab       = 3,
-    TaxiTab       = 4,
-    DeliveryTab   = 5,
-    PosterTab     = 6
+    SharesTab     = 1,
+    DirectoryTab  = 2,
+    MapTab        = 3,
+    NewsTab       = 4,
+    TaxiTab       = 5,
+    DeliveryTab   = 6,
+    PosterTab     = 7
 };
 
 
 @interface BaseTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
+
+@property MainHeaderView *mainHeaderView;
 @end
 
 @implementation BaseTableViewController
@@ -64,8 +67,8 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             self.tableView.rowHeight = v.frame.size.height;
             [self.tableView registerNib:[UINib nibWithNibName:[MainMenuCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             
-            MainHeaderView *mainHeaderView = [[[NSBundle mainBundle] loadNibNamed:[MainHeaderView description] owner:self options:nil] firstObject];
-            self.tableView.sectionHeaderHeight = mainHeaderView.frame.size.height;
+            self.mainHeaderView = [[[NSBundle mainBundle] loadNibNamed:[MainHeaderView description] owner:self options:nil] firstObject];
+            self.mainHeaderView.navigationController = self.navigationController;
         }
             break;
         case Shares:{
@@ -216,8 +219,6 @@ typedef NS_ENUM(NSInteger, mainMenu) {
         }
             break;
         case Poster3:{
-            //UIView * v = [[[NSBundle mainBundle] loadNibNamed:[Poster3Cell  description] owner:self options:nil] firstObject];
-            //self.tableView.rowHeight = v.frame.size.height;
             [self.tableView registerNib:[UINib nibWithNibName:[Poster3Cell  description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             self.tableView.estimatedRowHeight = 86;
             self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -248,21 +249,15 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     [AppManager roundMyView:sendView.sendButton borderRadius:5 borderWidth:0 color:nil];
     [sendView.sendButton addTarget:self action:@selector(openSendController) forControlEvents:UIControlEventTouchUpInside];
     
-    MainHeaderView *mainHeaderView;
     switch (self.controllerType) {
+        case MainMenu:
         case Directory2:
         case Directory3:
         case Poster2:
         case Poster3:
             return nil;
             break;
-            
-        case MainMenu:{
-            mainHeaderView = [[[NSBundle mainBundle] loadNibNamed:[MainHeaderView description] owner:self options:nil] firstObject];
-            mainHeaderView.navigationController = self.navigationController;
-        }
-            return mainHeaderView;
-            
+   
         case Shares:
             [sendView.sendButton setTitle:@"Разместить Акцию" forState: UIControlStateNormal];
             break;
@@ -297,7 +292,18 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 
      switch (self.controllerType) {
          case MainMenu:{
-             cell = [self mainMenuCell:indexPath andModel:model];
+             if (indexPath.row == 0) {
+                 static NSString *Identifier = @"main";
+                 cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+                 if (cell == nil) {
+                     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+                     [cell addSubview:self.mainHeaderView];
+                     cell.bounds = self.mainHeaderView.bounds;
+                 }
+                 
+                 return cell;
+             }else
+                cell = [self mainMenuCell:indexPath andModel:model];
          }
              break;
              
@@ -358,11 +364,22 @@ typedef NS_ENUM(NSInteger, mainMenu) {
   return cell;
  }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.controllerType == MainMenu && indexPath.row == 0) {
+        return self.mainHeaderView.bounds.size.height;
+    }
+    
+    return tableView.rowHeight;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *model = self.dataSource[indexPath.row];
     
     switch (self.controllerType) {
         case MainMenu:{
+            if (indexPath.row == 0) {
+                break;
+            }
             [self actionMainMenu:indexPath.row];
         }
             break;
@@ -565,6 +582,11 @@ typedef NS_ENUM(NSInteger, mainMenu) {
 }
 
 -(void)openSendController{
+    if (self.controllerType == Poster1 || self.controllerType ==  Poster2 || self.controllerType == Poster3) {
+        [self.navigationController pushViewController:[SendNewPosterViewController new] animated:YES];
+        return;
+    }
+    
     [self.navigationController pushViewController:[SendMessageViewController new] animated:YES];
 }
 

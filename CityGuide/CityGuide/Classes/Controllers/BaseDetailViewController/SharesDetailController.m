@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UITextView *text;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UITextView *phone;
+@property (weak, nonatomic) IBOutlet UITextView *site;
 
 
 
@@ -25,12 +27,25 @@
     [super viewDidLoad];
     self.title = @"Акция";
     self.navigationItem.rightBarButtonItem = [AppManager plusButton:self andSelector:@selector(openSendController)];
-    
+    //phone_key site_key
     if (self.souceDictionary != nil) {
         self.name.text = self.souceDictionary[title_key];
         [self.image sd_setImageWithURL:self.souceDictionary[image_key]];
         self.text.text = self.souceDictionary[details_key];
         self.date.text = self.souceDictionary[date_key];
+        
+        NSString *phoneT = self.souceDictionary[phone_key];
+        NSString *siteT = self.souceDictionary[site_key];
+        
+        if (phoneT) {
+            self.phone.text = phoneT;
+        }else
+            [self.phone removeFromSuperview];
+       
+        if (siteT) {
+            self.site.text = siteT;
+        }else
+            [self.site removeFromSuperview];
     }
         
 }

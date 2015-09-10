@@ -93,16 +93,18 @@ static NSString *urlStr= @"http://citymy.ru/api/";
 }
 
 +(void)sendNewPosterWithSubcategory:(NSString*)subcategory_id andImage:(NSData*)image andParameters:(NSDictionary*)parameters{
-    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"ads/ads/create_ads.php=",subcategory_id];
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"ads/create_ads.php?subcategory_id=",subcategory_id];
     
     [AppManager showProgressBar];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFormData:image name:@"image"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isEqual:@"0"]) {
+        NSString* newStr = [NSString stringWithUTF8String:[responseObject bytes]];
+        if ([newStr isEqual:@"0"]) {
             [AppManager showMessage:@"Сообщение отправлено"];
-        }else  if ([responseObject isEqual:@"1"]){
+        }else  if ([newStr isEqual:@"1"]){
             [AppManager showMessage:@"Ошибка, нет всех данных"];
         }else
             [AppManager showMessage:@"Ошибка"];
@@ -115,7 +117,8 @@ static NSString *urlStr= @"http://citymy.ru/api/";
 }
 
 +(NSArray*)getMainMenu{
-    return  @[ @{title_key: @"Ации", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"action_x"]},
+    return  @[ @"title",
+               @{title_key: @"Акции", details_key: @"Скидки, купоны, спецпредложения", image_key: [UIImage imageNamed:@"action_x"]},
                @{title_key: @"Справочник", details_key: @"Организации города, адреса, телефоны", image_key: [UIImage imageNamed:@"help_x"]},
                @{title_key: @"Карта", details_key: @"Карта городских организаций", image_key: [UIImage imageNamed:@"map_x"]},
                @{title_key: @"Новости", details_key: @"Актуальные новости города", image_key: [UIImage imageNamed:@"news_x"]},

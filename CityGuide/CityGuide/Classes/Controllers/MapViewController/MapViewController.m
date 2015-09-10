@@ -9,7 +9,7 @@
 #import "MapViewController.h"
 #import "FilterMapController.h"
 
-static NSString *const kAPIKey = @"AIzaSyCmrueEoID4P3XkUD5-EczuLLeW9Qicjgk";
+static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
 
 @interface MapViewController ()<FilterMapControllerDelegate>
 @property (nonatomic, strong) GMSMapView *map;
