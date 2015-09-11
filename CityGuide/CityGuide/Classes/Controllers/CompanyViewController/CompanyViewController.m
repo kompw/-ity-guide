@@ -51,9 +51,9 @@
         return;
     }
     
-    NSArray *subStrings = [coordinates componentsSeparatedByString:@";"];
+    NSArray *subStrings = [coordinates componentsSeparatedByString:@","];
     mapViewController.coordinates = CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue]);
-    [self.navigationController pushViewController:mapViewController animated:YES];
+    [self.navigationController pushViewController:[mapViewController init] animated:YES];
 }
 
 -(void)openSendController{

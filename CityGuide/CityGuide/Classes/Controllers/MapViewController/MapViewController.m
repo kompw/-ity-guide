@@ -50,7 +50,7 @@ static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
 
 -(void)workWithServerArray:(NSArray*)serverArray{
     for (NSDictionary *dic in serverArray) {
-        NSArray *subStrings = [dic[coordinates_key] componentsSeparatedByString:@";"];
+        NSArray *subStrings = [dic[coordinates_key] componentsSeparatedByString:@","];
         
         [self createMarkerWithName:dic[name_key] andAdress:dic[address_key] andCoordinates:CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue])];
     }

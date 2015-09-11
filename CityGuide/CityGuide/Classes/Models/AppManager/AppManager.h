@@ -21,4 +21,5 @@
 +(UIBarButtonItem*)backetButton:(UIViewController*)controller;
 +(UIBarButtonItem*)plusButton:(UIViewController*)controller andSelector:(SEL)s;
 +(void)roundMyView:(UIView*)view borderRadius:(CGFloat)radius borderWidth:(CGFloat)border color:(UIColor*)color;
++(UIImage *)imageResize :(UIImage*)img andResizeTo:(CGSize)newSize;
 @end

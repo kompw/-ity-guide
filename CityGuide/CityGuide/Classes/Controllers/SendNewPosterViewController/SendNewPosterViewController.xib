@@ -93,7 +93,7 @@
                                         <constraint firstAttribute="height" constant="77" id="2I3-8f-tXu"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="np6-tg-dpm"/>
                                     </connections>

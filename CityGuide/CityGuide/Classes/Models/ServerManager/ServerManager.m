@@ -99,7 +99,7 @@ static NSString *urlStr= @"http://citymy.ru/api/";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
      manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFormData:image name:@"image"];
+        [formData appendPartWithFileData:image name:@"image" fileName:@"image" mimeType:@"png"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString* newStr = [NSString stringWithUTF8String:[responseObject bytes]];
         if ([newStr isEqual:@"0"]) {

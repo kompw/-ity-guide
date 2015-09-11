@@ -154,6 +154,7 @@ typedef enum : NSUInteger {
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    originalImage = [AppManager imageResize:originalImage andResizeTo:CGSizeMake(800, 600)];
     self.image = UIImagePNGRepresentation(originalImage);
     
     [picker dismissViewControllerAnimated:YES completion:nil];
