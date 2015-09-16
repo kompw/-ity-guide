@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BaseTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,12 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self clearPush];
+    [Parse setApplicationId:@"iVKZeXS1XoGlv7XMxYSJNVsuHAiVpxm2WFoJOtTn" clientKey:@"3uZz5ynrthsLXOn4qtXUCmq06mocUrbxsCS94hIa"];
+    
     BaseTableViewController *baseViewController = [BaseTableViewController alloc];
     baseViewController.controllerType = MainMenu;
     
     UINavigationController *navigat = [[UINavigationController alloc]initWithRootViewController:[baseViewController init]];
     self.window.rootViewController = navigat;
     [self.window makeKeyAndVisible];
+    
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     return YES;
 }
@@ -37,16 +48,47 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [self clearPush];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self clearPush];
+}
+
+-(void)clearPush{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation.badge != 0) {
+        currentInstallation.badge = 0;
+        [currentInstallation saveEventually];
+    }
+}
+
+#pragma Parse and push
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global"];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [AppManager showMessage:error.description];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    NSString *testPuth = userInfo[@"aps"][@"alert"];
+    if (application.applicationState == UIApplicationStateActive) {
+        UIAlertView *alertView =  [[UIAlertView alloc]initWithTitle:NSBundle.mainBundle.infoDictionary[@"CFBundleDisplayName"] message:testPuth delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+}
+
 
 @end

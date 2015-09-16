@@ -13,6 +13,15 @@ static NSString *urlStr= @"http://citymy.ru/api/";
 
 @implementation ServerManager
 
++(void)getCompany:(NSString*)company_id  completion:(void (^)(NSArray* array))completion{
+    if (!company_id) {
+        return;
+    }
+    
+    NSString *url =[NSString stringWithFormat:@"%@%@%@",urlStr,@"catalog/get_companies.php?company_id=",company_id];
+    [self baseGetReqestWithUrk:url completion:completion];
+}
+
 +(void)sharesData:(void (^)(NSArray* array))completion{
     NSString *url = [urlStr stringByAppendingString:@"sales/get_sales.php"];
     [self baseGetReqestWithUrk:url completion:completion];

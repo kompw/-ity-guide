@@ -43,4 +43,5 @@ static NSString *site_key = @"site";
 +(void)poster2Data:(NSString*)category_id completion:(void (^)(NSArray* array))completion;
 +(void)poster3Data:(NSString*)subcategory_id completion:(void (^)(NSArray* array))completion;
 +(void)sendNewPosterWithSubcategory:(NSString*)subcategory_id andImage:(NSData*)image andParameters:(NSDictionary*)parameters;
++(void)getCompany:(NSString*)company_id  completion:(void (^)(NSArray* array))completion;
 @end

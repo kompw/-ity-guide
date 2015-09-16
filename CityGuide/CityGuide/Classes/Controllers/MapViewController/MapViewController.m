@@ -8,10 +8,11 @@
 
 #import "MapViewController.h"
 #import "FilterMapController.h"
+#import "CompanyViewController.h"
 
 static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
 
-@interface MapViewController ()<FilterMapControllerDelegate>
+@interface MapViewController ()<FilterMapControllerDelegate,GMSMapViewDelegate>
 @property (nonatomic, strong) GMSMapView *map;
 @end
 
@@ -36,11 +37,12 @@ static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
     }
     
     self.map = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+    self.map.delegate = self;
     self.view = self.map;
     
     //set marker
     if (self.companyName) {
-        [self createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates];
+        [self createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates company_id:nil];
     }else{
         [ServerManager mapForAllData:^(NSArray *array) {
              [self workWithServerArray:array];
@@ -52,13 +54,14 @@ static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
     for (NSDictionary *dic in serverArray) {
         NSArray *subStrings = [dic[coordinates_key] componentsSeparatedByString:@","];
         
-        [self createMarkerWithName:dic[name_key] andAdress:dic[address_key] andCoordinates:CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue])];
+        [self createMarkerWithName:dic[name_key] andAdress:dic[address_key] andCoordinates:CLLocationCoordinate2DMake([subStrings.firstObject doubleValue], [subStrings.lastObject doubleValue]) company_id:[dic[id_key] description]];
     }
 }
 
--(void)createMarkerWithName:(NSString*)name andAdress:(NSString*)adress andCoordinates:(CLLocationCoordinate2D) coordinates{
+-(void)createMarkerWithName:(NSString*)name andAdress:(NSString*)adress andCoordinates:(CLLocationCoordinate2D) coordinates company_id:(NSString*)company_id{
     GMSMarker *marker = [[GMSMarker alloc] init];
     
+    marker.userData = company_id;
     marker.position = coordinates;
     marker.title = name;
     marker.snippet = adress;
@@ -81,89 +84,24 @@ static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
     }];
 }
 
-
-
-/*
-- (IBAction)selectCategories:(id)sender {
-    if (self.categories) {
-        [self showCategories];
-    }else
-        [ServerManager directory1Data:^(NSArray *array) {
-            self.categories = array;
-            [self showCategories];
-        }];
+-(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker
+{
+     if (self.companyName) {
+         return NO;
+     }else{
+         NSString *numberId = marker.userData;
+          [ServerManager  getCompany:numberId completion:^(NSArray* array) {
+              if (array.count == 0) {
+                  return;
+              }
+              
+              CompanyViewController *companyViewController = [CompanyViewController alloc];
+              companyViewController.souceDictionary = array.firstObject;
+              [self.navigationController pushViewController:[companyViewController init] animated:YES];
+          }];
+        return YES;
+     }
 }
-
-- (IBAction)selectDownCategories:(id)sender {
-    if (self.downCategories) {
-        [self showDownCategories];
-    }else{
-        NSDictionary *dic = self.categories[selectedIndexCategories];
-        [ServerManager directory2Data:[dic[id_key] description] forMap:YES completion:^(NSArray *array) {
-            self.downCategories = array;
-            [self showDownCategories];
-        }];
-    }
-
-}
-
-
--(void)showCategories{
-    NSMutableArray *data = [NSMutableArray new];
-    for (NSDictionary *dic in self.categories) {
-        [data addObject:dic[name_key]];
-    }
-    
-    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc]  initWithTitle:@"Категория" rows:data initialSelection:selectedIndexCategories
-                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                           selectedIndexCategories = selectedIndex;
-                                           [categoriesButton setTitle:selectedValue forState:UIControlStateNormal];
-                                           
-                                           downCategoriesButton.translatesAutoresizingMaskIntoConstraints = NO;
-                                           downCategoriesButton.hidden = NO;
-                                       }
-                                     cancelBlock:^(ActionSheetStringPicker *picker) {}
-                                          origin:categoriesButton];
-    
-     [self showActionSheetPicker:picker];
-}
-
--(void)showDownCategories{
-    NSMutableArray *data = [NSMutableArray new];
-    for (NSDictionary *dic in self.downCategories) {
-        [data addObject:dic[name_key]];
-    }
-    
-    ActionSheetStringPicker *picker = [[ActionSheetStringPicker alloc]  initWithTitle:@"Субкатегория" rows:data initialSelection:selectedIndexDownCategories
-                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                           selectedIndexDownCategories = selectedIndex;
-                                           [downCategoriesButton setTitle:selectedValue forState:UIControlStateNormal];
-                                           
-                                           [self.map clear];
-                                           NSDictionary *dic = self.downCategories[selectedIndexDownCategories];
-                                           [ServerManager directory3Data:[dic[id_key] description] forMap:YES completion:^(NSArray *array) {
-                                               [self workWithServerArray:array];
-                                           }];
-                                       }
-                                     cancelBlock:^(ActionSheetStringPicker *picker) {}
-                                          origin:downCategoriesButton];
-    
-    [self showActionSheetPicker:picker];
-}
-
--(void)showActionSheetPicker:(ActionSheetStringPicker*)picker{
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"Выбрать"  style:UIBarButtonItemStylePlain target:nil action:nil];
-    UIFont *font = [UIFont boldSystemFontOfSize:17];
-    [item1 setTitleTextAttributes:@{NSFontAttributeName: font} forState:UIControlStateNormal];
-    
-    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Отмена"  style:UIBarButtonItemStylePlain target:nil action:nil];
-    [item2 setTitleTextAttributes:@{NSFontAttributeName: font} forState:UIControlStateNormal];
-    
-    [picker setDoneButton:item1];
-    [picker setCancelButton:item2];
-    [picker showActionSheetPicker];
-}
-*/
 
 
 @end
