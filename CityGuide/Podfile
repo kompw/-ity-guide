@@ -1,7 +1,7 @@
 platform :ios, '8.0'
 pod 'SVProgressHUD'
 pod 'AFNetworking'
-pod 'Google-Maps-iOS-SDK', '~> 1.9'
+pod 'Google-Maps-iOS-SDK'
 pod 'SDWebImage', '~> 3.7'
 pod 'WToast', '~> 1.0'
 pod 'ActionSheetPicker-3.0'

@@ -1,5 +1,5 @@
 PODS:
-  - ActionSheetPicker-3.0 (1.7.2)
+  - ActionSheetPicker-3.0 (2.0.1)
   - AFNetworking (2.6.0):
     - AFNetworking/NSURLConnection (= 2.6.0)
     - AFNetworking/NSURLSession (= 2.6.0)
@@ -23,7 +23,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.2.2)
   - Google-Maps-iOS-SDK (1.9.2)
-  - Parse (1.8.4):
+  - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -34,18 +34,18 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - AFNetworking
-  - Google-Maps-iOS-SDK (~> 1.9)
+  - Google-Maps-iOS-SDK
   - Parse
   - SDWebImage (~> 3.7)
   - SVProgressHUD
   - WToast (~> 1.0)
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: c5bdca19fd8b3d798f0c79892cbab6f11a8523ae
+  ActionSheetPicker-3.0: eeb47e64b7af3e09a50e1ce5dfee9c8c957490c6
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
   Google-Maps-iOS-SDK: 7f89cc1edb3ca239a410e5bc83cd1e060db3a289
-  Parse: c09d6efe4b2eea752765bc6f365a55516d909079
+  Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   WToast: 9e30f41c288f72a1bbff8b8ab490e2af2daea147
