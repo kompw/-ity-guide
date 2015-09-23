@@ -43,12 +43,13 @@ mydomodedovo@yandex.ru
 Программист под Android - Гилевич Артем
 Программист под IOS - Тарас Сорокин
 Дизайн - Александрина Мирошниченко
-Помощь в реализации - Кутовая Екатерина</mutableString>
+Помощь в реализации - Кутовая Екатерина
+Индивидуальные условия лицензии в городе Домодедово - Екатерина Еприкян</mutableString>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                         </textView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="версия 1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-SU-818">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="версия 2.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-SU-818">
                             <rect key="frame" x="483" y="15" width="77" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="6hJ-kk-NDl"/>

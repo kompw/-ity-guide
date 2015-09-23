@@ -43,11 +43,11 @@ static NSString *const kAPIKey = @"AIzaSyDz3EMFViCYM2m-UD7E1QZKnsdg98Rfmu4";
     //set marker
     if (self.companyName) {
         [self createMarkerWithName:self.companyName andAdress:self.companyAdress andCoordinates:self.coordinates company_id:nil];
-    }else{
+    }/*else{
         [ServerManager mapForAllData:^(NSArray *array) {
              [self workWithServerArray:array];
         }];
-    }
+    }*/
 }
 
 -(void)workWithServerArray:(NSArray*)serverArray{
