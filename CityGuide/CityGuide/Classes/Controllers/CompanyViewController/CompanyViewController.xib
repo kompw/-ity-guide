@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompanyViewController">
@@ -49,6 +49,9 @@
                             <state key="normal" title="Телефон">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <variation key="widthClass=compact">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </variation>
                             <connections>
                                 <action selector="phone:" destination="-1" eventType="touchUpInside" id="H5I-nA-r4t"/>
                             </connections>
@@ -76,10 +79,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="описание" translatesAutoresizingMaskIntoConstraints="NO" id="skC-oE-0Ta">
-                            <rect key="frame" x="8" y="136" width="568" height="456"/>
+                            <rect key="frame" x="8" y="136" width="568" height="400"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
                         </textView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-5j-CnX">
                             <rect key="frame" x="13" y="8" width="70" height="70"/>
@@ -94,7 +98,7 @@
                         <constraint firstAttribute="trailing" secondItem="HMN-0D-jbH" secondAttribute="trailing" constant="8" id="13k-5Z-eLx"/>
                         <constraint firstItem="FgH-BN-q6A" firstAttribute="top" secondItem="oRs-2q-ZkF" secondAttribute="bottom" constant="5" id="1rs-as-5vz"/>
                         <constraint firstItem="skC-oE-0Ta" firstAttribute="leading" secondItem="gvc-ld-zMq" secondAttribute="leading" constant="8" id="34O-8J-enJ"/>
-                        <constraint firstAttribute="bottom" secondItem="skC-oE-0Ta" secondAttribute="bottom" constant="-56" id="Agk-1n-Hxf"/>
+                        <constraint firstAttribute="bottom" secondItem="skC-oE-0Ta" secondAttribute="bottom" id="Agk-1n-Hxf"/>
                         <constraint firstItem="4UK-5j-CnX" firstAttribute="top" secondItem="gvc-ld-zMq" secondAttribute="top" constant="8" id="ES2-ac-hKo"/>
                         <constraint firstItem="rBZ-oR-vxq" firstAttribute="leading" secondItem="FgH-BN-q6A" secondAttribute="trailing" constant="8" id="HJO-jY-Uae"/>
                         <constraint firstItem="SpB-Rb-PhI" firstAttribute="leading" secondItem="gvc-ld-zMq" secondAttribute="leading" id="LM3-E3-BW4"/>

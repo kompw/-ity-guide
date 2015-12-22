@@ -104,9 +104,9 @@ typedef NS_ENUM(NSInteger, mainMenu) {
             break;
             
         case Directory2:{
-            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextCell description] owner:self options:nil] firstObject];
+            UIView * v = [[[NSBundle mainBundle] loadNibNamed:[TextWithImageCell description] owner:self options:nil] firstObject];
             self.tableView.rowHeight = v.frame.size.height;
-            [self.tableView registerNib:[UINib nibWithNibName:[TextCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+            [self.tableView registerNib:[UINib nibWithNibName:[TextWithImageCell description] bundle:nil] forCellReuseIdentifier:reuseIdentifier];
             
             [ServerManager  directory2Data:self.numberId.description forMap:NO completion:^(NSArray *array) {
                 dataSource = array;
@@ -345,12 +345,12 @@ typedef NS_ENUM(NSInteger, mainMenu) {
              
         case Poster1:
         case Directory1:
+        case Directory2:
              cell = [self textWithImageCell:indexPath andTitle:model[name_key] andImageUrl:model[image_key]];
              cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
              break;
              
         case Poster2:
-        case Directory2:
              cell = [self textCell:indexPath andModel:model];
              cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
              break;
