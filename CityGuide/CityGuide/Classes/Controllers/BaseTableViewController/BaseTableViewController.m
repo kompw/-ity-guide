@@ -488,7 +488,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     }
 }
 
-#pragma  configure cell
+#pragma - mark configure cell
 
 -(UITableViewCell*)mainMenuCell:(NSIndexPath *)indexPath andModel:(NSDictionary*)model{
     MainMenuCell* mainMenuCell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
@@ -546,7 +546,7 @@ typedef NS_ENUM(NSInteger, mainMenu) {
     return textWithImageCell;
 }
 
-#pragma action mainMenu
+#pragma - mark action mainMenu
 
 -(void)actionMainMenu:(NSInteger)row{
     BaseTableViewController *baseViewController = [BaseTableViewController alloc];

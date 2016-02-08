@@ -10,6 +10,11 @@
 #import "BaseTableViewController.h"
 #import <Parse/Parse.h>
 
+#import "SharesDetailController.h"
+#import "NewsDetailController.h"
+
+static NSString * const kServerId = @"id";
+
 @interface AppDelegate ()
 
 @end
@@ -34,6 +39,12 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+    //open controller on push
+    NSDictionary *userInfo = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (userInfo) {
+        [self application:application didReceiveRemoteNotification:userInfo];
+    }
     
     return YES;
 }
@@ -84,11 +95,76 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     NSString *testPuth = userInfo[@"aps"][@"alert"];
+    
+    NSString *saleId = userInfo[@"sale_id"];
+    NSString *newsId = userInfo[@"news_id"];
+    
+    UIViewController *currentViewController = ((UINavigationController *)self.window.rootViewController).topViewController;
+    
     if (application.applicationState == UIApplicationStateActive) {
-        UIAlertView *alertView =  [[UIAlertView alloc]initWithTitle:NSBundle.mainBundle.infoDictionary[@"CFBundleDisplayName"] message:testPuth delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertView show];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSBundle.mainBundle.infoDictionary[@"CFBundleDisplayName"] message:testPuth preferredStyle:UIAlertControllerStyleAlert];
+        if (saleId) {
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){ }];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Открыть" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                                        [self openSharesWithId:saleId toController:currentViewController];
+                                      }];
+            
+            [alertController addAction:cancelAction];
+            [alertController addAction:okAction];
+        }else if (newsId){
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){ }];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Открыть" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+                [self openNewsWithId:newsId toController:currentViewController];
+            }];
+            
+            [alertController addAction:cancelAction];
+            [alertController addAction:okAction];
+        }else{
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){ }];
+            [alertController addAction:okAction];
+        }
+        
+        [currentViewController presentViewController:alertController animated:YES completion:nil];
+       
+    }else{
+        
+        if (saleId) {
+            [self openSharesWithId:saleId toController:currentViewController];
+        }else if (newsId){
+            [self openNewsWithId:newsId toController:currentViewController];
+        }
     }
 }
 
+-(void)openSharesWithId:(NSString*)sharesId toController:(UIViewController*)controller{
+    NSNumber* _id = @([sharesId intValue]);
+    
+    [ServerManager sharesData:^(NSArray *array) {
+        NSDictionary *model = [array filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id object, NSDictionary *bindings) {
+            return [object[kServerId] isEqualToNumber:_id];
+        }]].lastObject;
+        if (model) {
+            SharesDetailController *baseDetailViewController = [SharesDetailController alloc];
+            baseDetailViewController.souceDictionary = model;
+            [controller.navigationController pushViewController:[baseDetailViewController init] animated:YES];
+        }
+    }];
+}
+
+-(void)openNewsWithId:(NSString*)newsId toController:(UIViewController*)controller{
+     NSNumber* _id = @([newsId intValue]);
+    
+    [ServerManager newsData:^(NSArray *array) {
+        NSDictionary *model = [array filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id object, NSDictionary *bindings) {
+            return [object[kServerId] isEqualToNumber:_id];
+        }]].lastObject;
+
+        if (model) {
+            NewsDetailController *newsDetailController = [NewsDetailController alloc];
+            newsDetailController.souceDictionary = model;
+            [controller.navigationController pushViewController:[newsDetailController init] animated:YES];
+        }
+    }];
+}
 
 @end
