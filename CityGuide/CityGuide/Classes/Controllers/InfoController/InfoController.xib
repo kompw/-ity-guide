@@ -31,7 +31,7 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-jP-gDE">
                             <rect key="frame" x="8" y="44" width="552" height="495"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">Интерактивное городское приложение. 
+                            <string key="text">Интерактивное городское приложение. 
 Все права защищены. 
 
 По вопросам функционирования и размещения в приложении просьба связываться с нами через
@@ -43,7 +43,7 @@ mydomodedovo@yandex.ru
 Программист под Android - Гилевич Артем
 Программист под IOS - Тарас Сорокин
 Дизайн - Александрина Мирошниченко
-Помощь в реализации - Кутовая Екатерина</mutableString>
+Помощь в реализации - Кутовая Екатерина</string>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
